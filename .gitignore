@@ -1,3 +1,6 @@
+# Mac kruft
+.DS_Store
+
 # Xcode
 #
 build/
