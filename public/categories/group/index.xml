@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Group on blank </title>
+      <generator uri="https://hugo.spf13.com">Hugo</generator>
+    <link>http://blank.mdhender.com/categories/group/index.xml/</link>
+    <language>en-us</language>
+    <author>Michael D Henderson</author>
+    
+    <updated>Tue, 16 Dec 2014 13:57:47 CST</updated>
+    
+    <item>
+      <title>Overview of Tags and Categories</title>
+      <link>http://blank.mdhender.com/group/overview/</link>
+      <pubDate>Tue, 16 Dec 2014 13:57:47 CST</pubDate>
+      <author>Michael D Henderson</author>
+      <guid>http://blank.mdhender.com/group/overview/</guid>
+      <description>
+
+&lt;p&gt;Integer efficitur lectus turpis, at vestibulum nisi tempor a. Sed vitae pharetra erat. Integer gravida felis eu metus vulputate, id tempus felis faucibus. Morbi eros ex, tincidunt in lorem ac, lobortis fermentum nunc.&lt;/p&gt;
+
+&lt;p&gt;Vestibulum in aliquam felis, sit amet sollicitudin eros. Proin commodo euismod purus scelerisque egestas. Morbi in nibh massa. Vivamus pellentesque magna a felis pretium finibus. Sed quam elit, feugiat ac semper id, commodo a dui. Vivamus pretium consequat massa non tristique. Donec et ultrices metus. Aenean imperdiet, sapien eu tempor aliquam, orci leo elementum sem, eu fermentum tortor odio in metus. Aliquam erat volutpat. Nam nec tortor arcu.&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_0&#34;&gt;Id Rutrum Nisi&lt;/h2&gt;
+
+&lt;p&gt;Maecenas sit amet lacus tellus. Ut consequat iaculis massa, ac tristique nisl viverra et. Suspendisse pretium orci augue, eget maximus nisi eleifend et. Donec ut mollis dolor. Nunc vel magna tempus, placerat eros sit amet, euismod mi. Quisque aliquam ligula at dictum aliquet. Suspendisse blandit ipsum eget ligula ullamcorper mattis. Curabitur feugiat lacus sollicitudin quam ultricies gravida. Donec id venenatis justo, id rutrum nisi. Donec laoreet ultrices ante at ultricies. Morbi rhoncus, nibh eu cursus vehicula, est est molestie augue, sed consectetur tortor eros non dui. Aliquam erat volutpat. Duis eget lacus at arcu pretium consequat. Suspendisse potenti. In aliquet fringilla est, et consequat orci maximus dignissim. Pellentesque dolor nisl, molestie at egestas at, dignissim et nunc.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Welcome to the blank template</title>
+      <link>http://blank.mdhender.com/post/2014/12/16/welcome/</link>
+      <pubDate>Tue, 16 Dec 2014 11:38:47 CST</pubDate>
+      <author>Michael D Henderson</author>
+      <guid>http://blank.mdhender.com/post/2014/12/16/welcome/</guid>
+      <description>
+
+&lt;p&gt;Integer efficitur lectus turpis, at vestibulum nisi tempor a. Sed vitae pharetra erat. Integer gravida felis eu metus vulputate, id tempus felis faucibus. Morbi eros ex, tincidunt in lorem ac, lobortis fermentum nunc.&lt;/p&gt;
+
+&lt;p&gt;Vestibulum in aliquam felis, sit amet sollicitudin eros. Proin commodo euismod purus scelerisque egestas. Morbi in nibh massa. Vivamus pellentesque magna a felis pretium finibus. Sed quam elit, feugiat ac semper id, commodo a dui. Vivamus pretium consequat massa non tristique. Donec et ultrices metus. Aenean imperdiet, sapien eu tempor aliquam, orci leo elementum sem, eu fermentum tortor odio in metus. Aliquam erat volutpat. Nam nec tortor arcu.&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_0&#34;&gt;Id Rutrum Nisi&lt;/h2&gt;
+
+&lt;p&gt;Maecenas sit amet lacus tellus. Ut consequat iaculis massa, ac tristique nisl viverra et. Suspendisse pretium orci augue, eget maximus nisi eleifend et. Donec ut mollis dolor. Nunc vel magna tempus, placerat eros sit amet, euismod mi. Quisque aliquam ligula at dictum aliquet. Suspendisse blandit ipsum eget ligula ullamcorper mattis. Curabitur feugiat lacus sollicitudin quam ultricies gravida. Donec id venenatis justo, id rutrum nisi. Donec laoreet ultrices ante at ultricies. Morbi rhoncus, nibh eu cursus vehicula, est est molestie augue, sed consectetur tortor eros non dui. Aliquam erat volutpat. Duis eget lacus at arcu pretium consequat. Suspendisse potenti. In aliquet fringilla est, et consequat orci maximus dignissim. Pellentesque dolor nisl, molestie at egestas at, dignissim et nunc.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

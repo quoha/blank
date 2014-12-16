@@ -1,0 +1,41 @@
+name = "blank"
+license = "MIT"
+licenselink = "https://github.com/quoha/blank/blob/master/LICENSE.md"
+description = "An unassuming introduction to Hugo templates."
+homepage = "http://github.io/quoha/blank/"
+tags = ["hugo", "starting", "theme"]
+features = ["blog"]
+
+[author]
+    name = "Michael D Henderson"
+    homepage = "http://mdhender.com"
+
+# If Porting existing theme
+[original]
+    author   = "Michael D Henderson"
+    homepage = "http://mdhender.com"
+    repo     = "https://github.com/quoha/blank/"
+
+[original.bread]
+    name     = "Basic Reader (v2.0 - Sep 11, 2012)"
+    author   = "Andreas Viklund"
+    homepage = "http://andreasviklund.com/"
+    repo     = "http://andreasviklund.com/templates/basic-reader/"
+
+[original.html5reset]
+    author   = "Monkey Do, LLC"
+    homepage = "http://html5reset.org/"
+    repo     = "https://github.com/murtaugh/HTML5-Reset"
+
+[original.origo]
+    name     = "Origo (v1.1 - Oct 04, 2012)"
+    author   = "Andreas Viklund"
+    homepage = "http://andreasviklund.com/"
+    repo     = "http://andreasviklund.com/templates/origo/"
+
+[original.typeplate]
+    homepage = "http://typeplate.com/"
+    repo     = "https://github.com/typeplate/starter-kit"
+
+[original.pallete]
+    homepage = "http://www.dtelepathy.com/blog/inspiration/beautiful-color-palettes-for-your-next-web-project"

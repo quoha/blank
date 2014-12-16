@@ -1,0 +1,21 @@
+#!/bin/bash
+
+if [ "$1" == pkg ]
+then
+  rm -rf public
+  hugo --config=config.toml || exit 2
+  tar --exclude='.DS_Store' -z -c -v -f public.tgz public
+  echo " info: created public.tgz"
+  ls -l public.tgz
+  exit 0
+fi
+
+if [ "$1" == push ]
+then
+  echo scp public.tgz account@host.example.com:webroot/
+  exit 0
+fi
+
+rm -rf public
+hugo --config=config.toml --buildDrafts --verbose --watch server
+exit 0

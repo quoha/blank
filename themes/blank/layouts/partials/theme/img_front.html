@@ -1,0 +1,7 @@
+{{ $baseURL := .Site.BaseUrl }}{{ with .Site.Params.blank.img_fronts }}
+<div class="row">
+	<div class="col c12 aligncenter">
+		<img src="{{ $baseURL }}{{ . }}" width="960" height="240" alt="" />
+	</div>
+</div>
+{{ end }}

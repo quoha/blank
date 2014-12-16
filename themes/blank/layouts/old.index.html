@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{{.Title}}</title>
+	<link rel="stylesheet" href="/css/normalize.css">
+	<link rel="stylesheet" href="/css/typeplate.css">
+{{ $slogan := .Site.Params.slogan }}
+</head>
+<body>
+<header role="banner">
+	<hgroup>
+		<h1 class="typl8-alpha"><a href="/">{{ .Title }}</a></h1>
+		<h2>{{ $slogan }}</h2>
+	</hgroup>
+</header>
+
+<section>
+	<!-- @halostatue: full and summary on the home page -->
+	{{ range $index, $page := where .Data.Pages "contentType" "post" }}
+		{{ if le $index 10 }}
+			<article>
+				{{ if lt $index 1 }}
+					<h1 class="typl8-gamma">{{ .Title }} <a href="{{ .Permalink }}">&raquo;</a></h1>
+					<small><time datetime="{{.Date.Format "2006-01-02T15:04:05Z07:00"}}" pubdate data-updated="true">{{ .Date.Format "Monday, January 2, 2006, 15:04:05 MST" }}</time></small>
+					{{ .Content }}
+				{{ else }}
+					<hr />
+					<h1 class="typl8-gamma">{{ .Title }} <a href="{{ .Permalink }}">&raquo;</a></h1>
+					<small><time datetime="{{.Date.Format "2006-01-02T15:04:05Z07:00"}}" pubdate data-updated="true">{{ .Date.Format "Monday, January 2, 2006" }}</time></small>
+				    {{ .Summary }}
+					<a href="{{ .RelPermalink }}">Read More &raquo;</a>
+				{{ end }}
+			</article>
+		{{ else }}
+			<hr />
+			<a href="{{ .Permalink }}">{{ .Title }}</a> &middot; {{ .Date.Format "Mon, Jan 2, 2006" }}
+		{{ end }}
+	{{ end }}
+</section>
+</body>
+</html>

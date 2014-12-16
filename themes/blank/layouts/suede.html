@@ -1,0 +1,134 @@
+{{ partial "doctype.html" . }}
+<head>
+{{ partial "head.html" . }}
+</head>
+<body class="light blue smaller freestyle01">
+<!-- { {  partial "shoutout.html" . } } -->
+<div id="layout">
+
+	<div class="row smaller">
+		<div class="col c5 smaller">
+			<h1><a href="index.html">Blank</a></h1>
+		</div>
+
+		<div class="col c7 aligncenter">
+			<p class="slogan">starting from scratch...</p>
+		</div>
+	</div>
+
+	<header>
+		<h1>The Blank Theme</h1>
+	</header>
+
+	<nav>
+		<ul>
+			<li><a href="/" title="">Home</a></li>
+			<li><a href="/origo.html" title="">ORIGO</a></li>
+			<li><a href="/bread.html" title="">BREAD</a></li>
+			<li><a href="/" title="">Suspendisse</a></li>
+		</ul>
+	</nav>
+
+
+
+
+
+
+<div id="fpscroll">
+	<!-- @halostatue: full and summary on the home page -->
+	{{ range $index, $page := where .Data.Pages "contentType" "post" }}
+		{{ if le $index 10 }}
+			<article>
+				{{ if lt $index 1 }}
+					<h1>{{ .Title }} <a href="{{ .Permalink }}">&raquo;</a></h1>
+					<small><time datetime="{{.Date.Format "2006-01-02T15:04:05Z07:00"}}" pubdate data-updated="true">{{ .Date.Format "Monday, January 2, 2006, 15:04:05 MST" }}</time></small>
+					{{ .Content }}
+				{{ else }}
+					<hr />
+					<h1>{{ .Title }} <a href="{{ .Permalink }}">&raquo;</a></h1>
+					<small><time datetime="{{.Date.Format "2006-01-02T15:04:05Z07:00"}}" pubdate data-updated="true">{{ .Date.Format "Monday, January 2, 2006" }}</time></small>
+				    {{ .Summary }}
+					<a href="{{ .RelPermalink }}">Read More &raquo;</a>
+				{{ end }}
+			</article>
+		{{ else }}
+			<hr />
+			<a href="{{ .Permalink }}">{{ .Title }}</a> &middot; {{ .Date.Format "Mon, Jan 2, 2006" }}
+		{{ end }}
+	{{ end }}
+
+
+
+
+
+
+
+	<article>
+		<h1>Sed semper justo</h1>
+		<p>
+			Sed semper justo ac ullamcorper laoreet. Donec et maximus justo. Morbi
+			a libero vel ex congue dictum. Suspendisse convallis imperdiet sapien
+			a bibendum. Nulla facilisi. Suspendisse lorem eros, congue et odio
+			quis, ultrices facilisis dolor. Nunc nec ex sed orci lacinia lobortis
+			ut vel est. Aenean pharetra interdum eros, vitae consectetur libero
+			pretium eu. Donec et magna elementum, aliquam quam condimentum,
+			molestie erat.
+		</p>
+
+		<h2>Article Subheader</h2>
+		
+		<p>
+			Etiam pretium odio eu mi convallis vitae varius neque pharetra. Nulla vestibulum nisi ut sem cursus sed mattis nisi egestas.
+		</p>
+		
+		<h3>Article Subhead</h3>
+		
+		<p>
+			Vestibulum lacus erat, volutpat vel dignissim at, fringilla ut felis.
+		</p>
+	
+		<p>
+			Fusce non risus turpis. Ut in dui sed felis vehicula luctus ac ut
+			urna. Suspendisse dictum ante sodales elit blandit, quis malesuada
+			eros malesuada. Duis et sem eu ligula hendrerit ornare quis ac odio.
+			Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+			posuere cubilia Curae; Donec eu ante vitae nulla pharetra ultrices.
+			Proin vitae porttitor massa. Proin tincidunt tincidunt congue.
+			Curabitur et urna ut ex elementum convallis. Donec a dolor a dui
+			elementum rutrum iaculis a dui. Quisque pharetra magna tellus, vitae
+			tincidunt quam suscipit quis.
+		</p>
+
+		<p>
+			Maecenas viverra vel augue sit amet elementum. Nunc urna ex, lacinia
+			vitae nisl eget, rutrum efficitur quam. Proin faucibus ipsum felis,
+			mollis sagittis urna consectetur quis. Duis pharetra lectus sed nisl
+			sollicitudin bibendum. Lorem ipsum dolor sit amet, consectetur
+			adipiscing elit. Praesent ac nisl ac eros fermentum interdum.
+			Curabitur velit nulla, porta vitae ultrices at, aliquam id nunc. Morbi
+			ultrices eros vel risus hendrerit cursus. Maecenas aliquet, enim vitae
+			sodales feugiat, arcu nibh mattis neque, in vehicula lectus nibh sit
+			amet turpis. Vestibulum ut pulvinar dui. Proin sed lectus justo.
+			Nullam sit amet ex suscipit, mollis nibh non, viverra nibh. Class
+			aptent taciti sociosqu ad litora torquent per conubia nostra, per
+			inceptos himenaeos. Cum sociis natoque penatibus et magnis dis
+			parturient montes, nascetur ridiculus mus.
+		</p>
+	</article>
+</div>
+	<aside>
+		<h2>Aenean</h2>
+		<ul>
+			<li>tristique</li>
+			<li>blandit</li>
+			<li><a href="/">vulputate</a></li>
+		</ul>
+	</aside>
+
+	<footer>
+		<p>&copy; Michael D Henderson 2014 &middot; Powered by <a href="http://gohugo.io">Hugo</a></p>
+	</footer>
+
+</div>
+</body>
+</html>

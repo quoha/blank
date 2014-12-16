@@ -1,0 +1,36 @@
+#############################################################################
+# search for "@@" to find settings that you must change to customize your
+# site. you will also need to update the theme parameters.
+#
+# there are some values that you can set in your front matter. doing so will
+# override the theme's defaults.
+#
+#############################################################################
+# @@ update baseurl for your production site and languageCode if needed
+baseurl        = "http://blank.mdhender.com"
+languageCode   = "en-us"
+title          = "blank"
+theme          = "blank"
+MetaDataFormat = "toml"
+
+#############################################################################
+#
+[author]
+	name = "Michael D Henderson"
+
+#############################################################################
+#
+[permalinks]
+	post = "/post/:year/:month/:day/:filename/"
+	top  = "/:filename/"
+
+#############################################################################
+#
+[Params.copyright]
+	year  = "2014"
+	owner = "Michael D Henderson"
+
+#############################################################################
+#
+[Params.blank]
+	img_front = "/css/origo.front.jpg"
