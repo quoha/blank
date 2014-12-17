@@ -4,7 +4,7 @@ Description = "Vestibulum ut pulvinar dui."
 Categories = ["archetypes", "best", "misc", "partials", "static", "syntax", "tags"]
 Tags = ["amet", "tincidunt"]
 date = "2014-12-04T21:42:24-06:00"
-menu = "main"
+menu = "home"
 weight = 5
 type = "post"
 +++

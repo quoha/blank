@@ -1,0 +1,28 @@
+
+{{ "<!-- hugo: enter themes/blank/partials/nav.html -->" | safeHtml }}
+<nav>
+{{ $baseUrl := .Site.BaseUrl }}
+{{ with (or .Params.menu "home") }}
+	<ul class="menu">
+		<li><a {{ if eq "home" . }}class="current"{{ end }} href="{{ $baseUrl }}/" title="">Home</a></li>
+		<li><a href="{{ $baseUrl }}/" title="">Templates</a>
+			<ul class="subpages">
+				<li><a {{ if eq "archetypes" . }}class="current"{{end}} href="{{ $baseUrl }}/archetype">Archetypes</a></li>
+				<li><a {{ if eq "groups"     . }}class="current"{{end}} href="{{ $baseUrl }}/group">Groups</a></li>
+				<li><a {{ if eq "homepage"   . }}class="current"{{end}} href="{{ $baseUrl }}/homepage">Home Page</a></li>
+				<li><a {{ if eq "lists"      . }}class="current"{{end}} href="{{ $baseUrl }}/list">Lists</a></li>
+				<li><a {{ if eq "menus"      . }}class="current"{{end}} href="{{ $baseUrl }}/menu">Menus</a></li>
+				<li><a {{ if eq "partial"    . }}class="current"{{end}} href="{{ $baseUrl }}/partial">Partials</a></li>
+				<li><a {{ if eq "single"     . }}class="current"{{end}} href="{{ $baseUrl }}/single">Singles</a></li>
+				<li><a {{ if eq "static"     . }}class="current"{{end}} href="{{ $baseUrl }}/static">Static</a></li>
+				<li><a {{ if eq "syntax"     . }}class="current"{{end}} href="{{ $baseUrl }}/syntax">Syntax</a></li>
+			</ul>
+		</li>
+		<li><a {{ if eq "best"    . }}class="current"{{end}} href="{{ $baseUrl }}/best">Best Practices</a>
+		<li><a {{ if eq "misc"    . }}class="current"{{end}} href="{{ $baseUrl }}/misc">Miscellaneous</a>
+		<li><a {{ if eq "privacy" . }}class="current"{{end}} href="{{ $baseUrl }}/privacy">Privacy</a></li>
+		<li><a {{ if eq "about"   . }}class="current"{{end}} href="{{ $baseUrl }}/about">About</a></li>
+	</ul>
+{{ end }}
+</nav>
+{{ "<!-- hugo: exit themes/blank/partials/nav.html -->" | safeHtml }}

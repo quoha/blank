@@ -1,0 +1,48 @@
+{{ partial "doctype.html" . }}
+<head>
+{{ partial "head.html" . }}
+</head>
+<body class="light blue smaller freestyle01">
+<!-- { {  partial "shoutout.html" . } } -->
+<div id="layout">
+
+	<div class="row smaller">
+		<div class="col c5 smaller">
+			<h1><a href="{{ .Site.BaseUrl }}/index.html">BLANK</a></h1>
+		</div>
+
+		<div class="col c7 aligncenter">
+			<p class="slogan">starting from scratch...</p>
+		</div>
+	</div>
+
+{{ partial "theme/img_front.html" . }}
+
+	<div class="row">
+		<div class="col c2 alignleft">
+{{ partial "nav.html" . }}
+		</div>
+ 
+		<div class="col c8">
+			<article>
+				<h1>{{ .Title }}</h1>
+				{{ .Content }}
+			</article>
+		</div>
+
+		<div class="col c2">
+			<!-- what to do with this space -->
+		</div>
+	</div>
+
+	<div id="footer" class="row">
+		<div class="col c12 aligncenter">
+			<footer>
+				<p>&copy; Michael D Henderson 2014 &middot; Powered by <a href="http://gohugo.io">Hugo</a></p>
+			</footer>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

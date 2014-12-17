@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Tops on blank </title>
+      <generator uri="https://hugo.spf13.com">Hugo</generator>
+    <link>http://blank.mdhender.com/top/index.xml/</link>
+    <language>en-us</language>
+    <author>Michael D Henderson</author>
+    
+    <updated>Wed, 17 Dec 2014 14:04:34 CST</updated>
+    
+    <item>
+      <title>Privacy Policy</title>
+      <link>http://blank.mdhender.com/privacy/</link>
+      <pubDate>Wed, 17 Dec 2014 14:04:34 CST</pubDate>
+      <author>Michael D Henderson</author>
+      <guid>http://blank.mdhender.com/privacy/</guid>
+      <description>
+
+&lt;p&gt;My privacy policy is simple: I don&amp;rsquo;t intend to track or sell any information
+about you or your browsing history.&lt;/p&gt;
+
+&lt;p&gt;My hosting company may log information about visitors, though. They currently
+track originating IP address, URL requested, and the time of the request. Logs
+are stored on their servers and in their backups for an unknown length of time.&lt;/p&gt;
+
+&lt;p&gt;The primary purpose of these logs is to track usage and to monitor for attempts
+at exploiting the system.&lt;/p&gt;
+
+&lt;p&gt;If you find this logging troublesome, please don&amp;rsquo;t use this site.&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_0&#34;&gt;Future Plans&lt;/h2&gt;
+
+&lt;p&gt;I intend to use Google Analytics in the future. I also intend to integrate
+some social media tools such as Discourse, Facebook, and Twitter. When I do,
+I will update this page.&lt;/p&gt;
+
+&lt;p&gt;The purpose of these changes is to learn how to integrate the tools with Hugo
+and then to teach others to do the same.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>About This Site</title>
+      <link>http://blank.mdhender.com/about/</link>
+      <pubDate>Wed, 17 Dec 2014 14:04:34 CST</pubDate>
+      <author>Michael D Henderson</author>
+      <guid>http://blank.mdhender.com/about/</guid>
+      <description>
+
+&lt;p&gt;This site is a tutorial for the Hugo static web site generator.
+Everything is generated from the &lt;a href=&#34;https://github.com/quoha/blank&#34;&gt;source&lt;/a&gt; stored on GitHub.&lt;/p&gt;
+
+&lt;p&gt;Please remember that this site shows how to use Hugo, not how to design a web site.
+Hugo can easily generate a responsive website, but this theme is kept simple to avoid distractions.&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_0&#34;&gt;Design&lt;/h2&gt;
+
+&lt;p&gt;The main design for this site comes from the &lt;a href=&#34;http://andreasviklund.com/templates/origo/&#34;&gt;Origo&lt;/a&gt; theme
+by &lt;a href=&#34;http://andreasviklund.com/templates/andreas01&#34;&gt;Andreas Viklund&lt;/a&gt;. Some alternate layouts are taken
+from his &lt;a href=&#34;http://andreasviklund.com/templates/basic-reader/&#34;&gt;Basic Reader&lt;/a&gt; theme.&lt;/p&gt;
+
+&lt;p&gt;I use the &lt;a href=&#34;http://html5reset.org/&#34;&gt;HTML5 Reset&lt;/a&gt; and plan on integrating some of the beautiful typography
+from &lt;a href=&#34;http://typeplate.com/&#34;&gt;Typeplate&lt;/a&gt;. The articles on changing colors use some of these
+&lt;a href=&#34;http://www.dtelepathy.com/blog/inspiration/beautiful-color-palettes-for-your-next-web-project&#34;&gt;palletes&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_1&#34;&gt;Thanks&lt;/h2&gt;
+
+&lt;p&gt;Thanks to everyone on the &lt;a href=&#34;http://discuss.gohugo.io/&#34;&gt;Hugo forum&lt;/a&gt; for their help in understanding how
+Hugo works and how it should be used.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

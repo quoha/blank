@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Menus on blank </title>
+      <generator uri="https://hugo.spf13.com">Hugo</generator>
+    <link>http://blank.mdhender.com/tags/menus/index.xml/</link>
+    <language>en-us</language>
+    <author>Michael D Henderson</author>
+    
+    <updated>Wed, 17 Dec 2014 15:39:00 CST</updated>
+    
+    <item>
+      <title>A Simple Menu</title>
+      <link>http://blank.mdhender.com/post/simple-menu/</link>
+      <pubDate>Wed, 17 Dec 2014 15:39:00 CST</pubDate>
+      <author>Michael D Henderson</author>
+      <guid>http://blank.mdhender.com/post/simple-menu/</guid>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;http://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; comes with the ability to control how &lt;a href=&#34;http://gohugo.io/extras/menus/&#34;&gt;menus&lt;/a&gt;
+get generated. This article will focus on just a few features - the mininum needed to make a set of
+static menus look like they are dynamic.&lt;/p&gt;
+
+&lt;p&gt;I think that it is easiest to create a static version of what I am after and then
+make changes to turn it into a template. That works really well with the &lt;a href=&#34;http://gohugo.io/extras/livereload/&#34;&gt;live reload&lt;/a&gt;
+feature.&lt;/p&gt;
+
+&lt;p&gt;As always, you can find all of this at my &lt;a href=&#34;https://github.com/quoha/blank&#34;&gt;repo&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_0&#34;&gt;A Hard-Coded List&lt;/h2&gt;
+
+&lt;p&gt;The site&amp;rsquo;s menu is simply going to list most of the categories and provide a link to the list page
+for the category. My theme has support for showing the &amp;ldquo;current&amp;rdquo; menu item by highlighting it, so
+I would like to use that.&lt;/p&gt;
+
+&lt;p&gt;Here&amp;rsquo;s what the generated HTML should look like.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;nav&amp;gt;
+	&amp;lt;ul class=&amp;quot;menu&amp;quot;&amp;gt;
+		&amp;lt;li&amp;gt;&amp;lt;a class=&amp;quot;current&amp;quot; href=&amp;quot;{{ .Site.BaseUrl }}/&amp;quot; title=&amp;quot;&amp;quot;&amp;gt;Home&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+		&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ .Site.BaseUrl }}/&amp;quot;&amp;gt;Templates&amp;lt;/a&amp;gt;
+			&amp;lt;ul class=&amp;quot;subpages&amp;quot;&amp;gt;
+				&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ .Site.BaseUrl }}/archetype&amp;quot;&amp;gt;Archetypes&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+				&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ .Site.BaseUrl }}/group&amp;quot;&amp;gt;Groups&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+				&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ .Site.BaseUrl }}/homepage&amp;quot;&amp;gt;Home Page&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+				&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ .Site.BaseUrl }}/list&amp;quot;&amp;gt;Lists&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+				&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ .Site.BaseUrl }}/menu&amp;quot;&amp;gt;Menus&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+				&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ .Site.BaseUrl }}/partial&amp;quot;&amp;gt;Partials&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+				&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ .Site.BaseUrl }}/single&amp;quot;&amp;gt;Singles&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+				&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ .Site.BaseUrl }}/static&amp;quot;&amp;gt;Static&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+				&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ .Site.BaseUrl }}/syntax&amp;quot;&amp;gt;Syntax&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+			&amp;lt;/ul&amp;gt;
+		&amp;lt;/li&amp;gt;
+		&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ .Site.BaseUrl }}/best&amp;quot;&amp;gt;Best Practices&amp;lt;/a&amp;gt;
+		&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ .Site.BaseUrl }}/misc&amp;quot;&amp;gt;Miscellaneous&amp;lt;/a&amp;gt;
+		&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ .Site.BaseUrl }}/privacy&amp;quot;&amp;gt;Privacy&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+		&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ .Site.BaseUrl }}/about&amp;quot;&amp;gt;About&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+	&amp;lt;/ul&amp;gt;
+&amp;lt;/nav&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Note that I added the &amp;ldquo;current&amp;rdquo; class. To give it that dynamic feel, I want the menu item
+highlighting to change to reflect the currently displayed content. That is not as hard as
+it might seem.&lt;/p&gt;
+
+&lt;p&gt;I am using &lt;code&gt;.Site.BaseUrl&lt;/code&gt; on the off-chance that I move this site to a sub-directory on
+my web site. I doubt that will ever happen, but it is a good idea, especially if you are
+working on a theme since you can&amp;rsquo;t predict what users will do with it.&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_1&#34;&gt;Setting up the Front Matter&lt;/h2&gt;
+
+&lt;p&gt;Hugo expects to find menu definitions in the front matter, so that is where I will start.&lt;/p&gt;
+
+&lt;p&gt;I want my menu to sort of mirror the tag and category structure, so I set my &amp;ldquo;menu&amp;rdquo; to the
+name of the menu that I want to associate the content with. For example, this article is
+about menus, so I add the following to my front matter:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;menu = &amp;quot;menus&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;For my &amp;ldquo;about&amp;rdquo; page, I set the value to &amp;ldquo;about.&amp;rdquo; For an article about the home page, I would
+set it to &amp;ldquo;homepage.&amp;rdquo; That aligns very nicely with the paths in my menu structure.&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_2&#34;&gt;Create a Partial&lt;/h2&gt;
+
+&lt;p&gt;I like to create partial templates for most of my work, and this is no different.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ &amp;quot;&amp;lt;!-- hugo: enter themes/blank/partials/nav.html --&amp;gt;&amp;quot; | safeHtml }}
+&amp;lt;nav&amp;gt;
+	&amp;lt;ul&amp;gt;
+		&amp;lt;li&amp;gt;&amp;lt;a class=&amp;quot;current&amp;quot; href=&amp;quot;{{ .Site.BaseUrl }}/&amp;quot; title=&amp;quot;&amp;quot;&amp;gt;Home&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+		&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ .Site.BaseUrl }}/&amp;quot;&amp;gt;Templates&amp;lt;/a&amp;gt;
+			&amp;lt;ul class=&amp;quot;subpages&amp;quot;&amp;gt;
+				&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ .Site.BaseUrl }}/archetype&amp;quot;&amp;gt;Archetypes&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+				&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ .Site.BaseUrl }}/group&amp;quot;&amp;gt;Groups&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+				&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ .Site.BaseUrl }}/homepage&amp;quot;&amp;gt;Home Page&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+				&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ .Site.BaseUrl }}/list&amp;quot;&amp;gt;Lists&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+				&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ .Site.BaseUrl }}/menu&amp;quot;&amp;gt;Menus&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+				&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ .Site.BaseUrl }}/partial&amp;quot;&amp;gt;Partials&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+				&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ .Site.BaseUrl }}/single&amp;quot;&amp;gt;Singles&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+				&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ .Site.BaseUrl }}/static&amp;quot;&amp;gt;Static&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+				&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ .Site.BaseUrl }}/syntax&amp;quot;&amp;gt;Syntax&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+			&amp;lt;/ul&amp;gt;
+		&amp;lt;/li&amp;gt;
+		&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ .Site.BaseUrl }}/best&amp;quot;&amp;gt;Best Practices&amp;lt;/a&amp;gt;
+		&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ .Site.BaseUrl }}/misc&amp;quot;&amp;gt;Miscellaneous&amp;lt;/a&amp;gt;
+		&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ .Site.BaseUrl }}/privacy&amp;quot;&amp;gt;Privacy&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+		&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ .Site.BaseUrl }}/about&amp;quot;&amp;gt;About&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+	&amp;lt;/ul&amp;gt;
+&amp;lt;/nav&amp;gt;
+{{ &amp;quot;&amp;lt;!-- hugo: exit themes/blank/partials/nav.html --&amp;gt;&amp;quot; | safeHtml }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In my template, I call the partial:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ partial &amp;quot;nav.html&amp;quot; . }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I keep a browser window open next to my text editor so that I can see the changes every time
+I save the file.&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_3&#34;&gt;Front Matter Variables&lt;/h2&gt;
+
+&lt;p&gt;When you define a variable in the front matter, Hugo stores it in the &lt;code&gt;.Params&lt;/code&gt; map. You just
+have to add the name of the variable to reference it:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;.Params.menu
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We can use a simple test to determine which menu item to highlight: if the articles &amp;ldquo;menu&amp;rdquo; variable is
+the same as the menu item&amp;rsquo;s path, then it should be highlighted.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ if eq &amp;quot;archetypes&amp;quot; .Params.menu }}class=&amp;quot;current&amp;quot;{{end}}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;One of the nice features about the &lt;code&gt;.Params&lt;/code&gt; map is that it doesn&amp;rsquo;t throw an error if the variable
+isn&amp;rsquo;t defined. That means we can use &lt;code&gt;.Params.menu&lt;/code&gt; even if the user forgets to define it in their
+front matter.&lt;/p&gt;
+
+&lt;p&gt;(Note - if you are doing something like this, you should provide a default like &lt;code&gt;menu = &amp;quot;none&amp;quot;&lt;/code&gt; in your archetypes.)&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s update all the lines with that test:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;li&amp;gt;&amp;lt;a {{ if eq &amp;quot;archetypes&amp;quot; .Params.menu }}class=&amp;quot;current&amp;quot;{{end}} href=&amp;quot;{{ .Site.BaseUrl }}/archetype&amp;quot;&amp;gt;Archetypes&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;That works pretty well. If an article defines a menu, then the corresponding menu item is highlighted.
+There are a couple of problems, though. If the article doesn&amp;rsquo;t define a menu, then nothing is highlighted.
+Or if it defines one but there&amp;rsquo;s a typo (say &amp;ldquo;archetype&amp;rdquo; or &amp;ldquo;architypes&amp;rdquo;), then nothing is highlighted.&lt;/p&gt;
+
+&lt;p&gt;While that second issue is generally an unsolvable problem, I want the easy out for the first - highlight the Home menu.&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_4&#34;&gt;Defaulting a Variable&lt;/h2&gt;
+
+&lt;p&gt;This should be an easy thing to do: if the menu isn&amp;rsquo;t defined, provide a default value of &amp;ldquo;home.&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;My favorite way to do that is with the &amp;ldquo;with&amp;rdquo; template command:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ with (or .Params.menu &amp;quot;home&amp;quot;) }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;That reads &amp;ldquo;In the following block, use .Params.menu if it is defined, otherwise use the value &amp;lsquo;home&amp;rsquo;.&amp;rdquo; It&amp;rsquo;s nifty.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ with (or .Params.menu &amp;quot;home&amp;quot;) }}
+	&amp;lt;ul class=&amp;quot;menu&amp;quot;&amp;gt;
+		&amp;lt;li&amp;gt;&amp;lt;a {{ if eq &amp;quot;home&amp;quot; . }}class=&amp;quot;current&amp;quot;{{ end }} href=&amp;quot;{{ .Site.BaseUrl }}/&amp;quot; title=&amp;quot;&amp;quot;&amp;gt;Home&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Saving that, though, causes problems with the generated page because the &amp;ldquo;with&amp;rdquo; command resets &amp;ldquo;.&amp;rdquo; and
+that means &lt;code&gt;.Site&lt;/code&gt; is no longer valid. The fix is to do the variable-local-shuffle:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ $baseUrl := .Site.BaseUrl }}
+{{ with (or .Params.menu &amp;quot;home&amp;quot;) }}
+	&amp;lt;ul class=&amp;quot;menu&amp;quot;&amp;gt;
+		&amp;lt;li&amp;gt;&amp;lt;a {{ if eq &amp;quot;home&amp;quot; . }}class=&amp;quot;current&amp;quot;{{ end }} href=&amp;quot;{{ $baseUrl }}/&amp;quot; title=&amp;quot;&amp;quot;&amp;gt;Home&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;toc_5&#34;&gt;The Final Partial&lt;/h2&gt;
+
+&lt;p&gt;My theme&amp;rsquo;s &lt;code&gt;layous/partials/nav.html&lt;/code&gt; contains:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;
+{{ &amp;quot;&amp;lt;!-- hugo: enter themes/blank/partials/nav.html --&amp;gt;&amp;quot; | safeHtml }}
+&amp;lt;nav&amp;gt;
+{{ $baseUrl := .Site.BaseUrl }}
+{{ with (or .Params.menu &amp;quot;home&amp;quot;) }}
+	&amp;lt;ul class=&amp;quot;menu&amp;quot;&amp;gt;
+		&amp;lt;li&amp;gt;&amp;lt;a {{ if eq &amp;quot;home&amp;quot; . }}class=&amp;quot;current&amp;quot;{{ end }} href=&amp;quot;{{ $baseUrl }}/&amp;quot; title=&amp;quot;&amp;quot;&amp;gt;Home&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+		&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ $baseUrl }}/&amp;quot; title=&amp;quot;&amp;quot;&amp;gt;Templates&amp;lt;/a&amp;gt;
+			&amp;lt;ul class=&amp;quot;subpages&amp;quot;&amp;gt;
+				&amp;lt;li&amp;gt;&amp;lt;a {{ if eq &amp;quot;archetypes&amp;quot; . }}class=&amp;quot;current&amp;quot;{{end}} href=&amp;quot;{{ $baseUrl }}/archetype&amp;quot;&amp;gt;Archetypes&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+				&amp;lt;li&amp;gt;&amp;lt;a {{ if eq &amp;quot;groups&amp;quot;     . }}class=&amp;quot;current&amp;quot;{{end}} href=&amp;quot;{{ $baseUrl }}/group&amp;quot;&amp;gt;Groups&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+				&amp;lt;li&amp;gt;&amp;lt;a {{ if eq &amp;quot;homepage&amp;quot;   . }}class=&amp;quot;current&amp;quot;{{end}} href=&amp;quot;{{ $baseUrl }}/homepage&amp;quot;&amp;gt;Home Page&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+				&amp;lt;li&amp;gt;&amp;lt;a {{ if eq &amp;quot;lists&amp;quot;      . }}class=&amp;quot;current&amp;quot;{{end}} href=&amp;quot;{{ $baseUrl }}/list&amp;quot;&amp;gt;Lists&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+				&amp;lt;li&amp;gt;&amp;lt;a {{ if eq &amp;quot;menus&amp;quot;      . }}class=&amp;quot;current&amp;quot;{{end}} href=&amp;quot;{{ $baseUrl }}/menu&amp;quot;&amp;gt;Menus&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+				&amp;lt;li&amp;gt;&amp;lt;a {{ if eq &amp;quot;partial&amp;quot;    . }}class=&amp;quot;current&amp;quot;{{end}} href=&amp;quot;{{ $baseUrl }}/partial&amp;quot;&amp;gt;Partials&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+				&amp;lt;li&amp;gt;&amp;lt;a {{ if eq &amp;quot;single&amp;quot;     . }}class=&amp;quot;current&amp;quot;{{end}} href=&amp;quot;{{ $baseUrl }}/single&amp;quot;&amp;gt;Singles&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+				&amp;lt;li&amp;gt;&amp;lt;a {{ if eq &amp;quot;static&amp;quot;     . }}class=&amp;quot;current&amp;quot;{{end}} href=&amp;quot;{{ $baseUrl }}/static&amp;quot;&amp;gt;Static&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+				&amp;lt;li&amp;gt;&amp;lt;a {{ if eq &amp;quot;syntax&amp;quot;     . }}class=&amp;quot;current&amp;quot;{{end}} href=&amp;quot;{{ $baseUrl }}/syntax&amp;quot;&amp;gt;Syntax&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+			&amp;lt;/ul&amp;gt;
+		&amp;lt;/li&amp;gt;
+		&amp;lt;li&amp;gt;&amp;lt;a {{ if eq &amp;quot;best&amp;quot;    . }}class=&amp;quot;current&amp;quot;{{end}} href=&amp;quot;{{ $baseUrl }}/best&amp;quot;&amp;gt;Best Practices&amp;lt;/a&amp;gt;
+		&amp;lt;li&amp;gt;&amp;lt;a {{ if eq &amp;quot;misc&amp;quot;    . }}class=&amp;quot;current&amp;quot;{{end}} href=&amp;quot;{{ $baseUrl }}/misc&amp;quot;&amp;gt;Miscellaneous&amp;lt;/a&amp;gt;
+		&amp;lt;li&amp;gt;&amp;lt;a {{ if eq &amp;quot;privacy&amp;quot; . }}class=&amp;quot;current&amp;quot;{{end}} href=&amp;quot;{{ $baseUrl }}/privacy&amp;quot;&amp;gt;Privacy&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+		&amp;lt;li&amp;gt;&amp;lt;a {{ if eq &amp;quot;about&amp;quot;   . }}class=&amp;quot;current&amp;quot;{{end}} href=&amp;quot;{{ $baseUrl }}/about&amp;quot;&amp;gt;About&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+	&amp;lt;/ul&amp;gt;
+{{ end }}
+&amp;lt;/nav&amp;gt;
+{{ &amp;quot;&amp;lt;!-- hugo: exit themes/blank/partials/nav.html --&amp;gt;&amp;quot; | safeHtml }}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

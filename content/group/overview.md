@@ -1,18 +1,29 @@
 +++
-title = "Overview of Tags and Categories"
-Categories = ["group"]
+title = "Overview of Taxonomies"
+Categories = ["taxonomy"]
 Description = ""
 Tags = ["categories", "lists", "tags"]
 date = "2014-12-16T13:57:47-06:00"
 menu = "group"
-type = "group"
+type = "post"
 weight = 5
 +++
 
-Integer efficitur lectus turpis, at vestibulum nisi tempor a. Sed vitae pharetra erat. Integer gravida felis eu metus vulputate, id tempus felis faucibus. Morbi eros ex, tincidunt in lorem ac, lobortis fermentum nunc.
+[Hugo](http://gohugo.io/) has an exceptionally flexible system for managing with taxonomies.
+That's just a fancy way to say that Hugo helps you to classify and organize your site's content.
+
 <!--more-->
-Vestibulum in aliquam felis, sit amet sollicitudin eros. Proin commodo euismod purus scelerisque egestas. Morbi in nibh massa. Vivamus pellentesque magna a felis pretium finibus. Sed quam elit, feugiat ac semper id, commodo a dui. Vivamus pretium consequat massa non tristique. Donec et ultrices metus. Aenean imperdiet, sapien eu tempor aliquam, orci leo elementum sem, eu fermentum tortor odio in metus. Aliquam erat volutpat. Nam nec tortor arcu.
+I visualize taxonomies as a sort of encyclopedia. It's a really odd encyclopedia because every volume of
+my metaphorical set is about a different topic. There's a volume on chimpanzees and a volume on baseball
+players and one on Shakespeare.
 
-## Id Rutrum Nisi
+Another odd thing about this set is that none of the volumes contain any articles. Open one to any
+page and all you'll find is a link to the article. The articles are stored in a separate file cabinet.
+That allows articles to be referenced in multiple volumes. For example, my post on a tribe of baseball
+playing chimpanzees named The Shakespeares could be included in three separate volumes.
 
-Maecenas sit amet lacus tellus. Ut consequat iaculis massa, ac tristique nisl viverra et. Suspendisse pretium orci augue, eget maximus nisi eleifend et. Donec ut mollis dolor. Nunc vel magna tempus, placerat eros sit amet, euismod mi. Quisque aliquam ligula at dictum aliquet. Suspendisse blandit ipsum eget ligula ullamcorper mattis. Curabitur feugiat lacus sollicitudin quam ultricies gravida. Donec id venenatis justo, id rutrum nisi. Donec laoreet ultrices ante at ultricies. Morbi rhoncus, nibh eu cursus vehicula, est est molestie augue, sed consectetur tortor eros non dui. Aliquam erat volutpat. Duis eget lacus at arcu pretium consequat. Suspendisse potenti. In aliquet fringilla est, et consequat orci maximus dignissim. Pellentesque dolor nisl, molestie at egestas at, dignissim et nunc.
+If you can accept the metaphor, then it's not much of a leap to say:
+
+* Taxonomy - a volume of the encyclopedia. It can contain any number of articles.
+* Term - the name of an article. It's the key used to find the actual article. Terms are unique within a taxonomy. The same term can appear in multiple taxonomies.
+* Content - the article. The content of the article can be referenced from any number of taxonomies but can only be referenced by one term.

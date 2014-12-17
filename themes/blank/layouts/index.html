@@ -8,7 +8,7 @@
 
 	<div class="row smaller">
 		<div class="col c5 smaller">
-			<h1><a href="index.html">BLANK</a></h1>
+			<h1><a href="{{ .Site.BaseUrl }}/index.html">BLANK</a></h1>
 		</div>
 
 		<div class="col c7 aligncenter">
@@ -22,12 +22,14 @@
 		<div class="col c2 alignleft">
 			<nav>
 				<ul class="menu">
-					<li><a class="current" href="/" title="">Home</a></li>
+					<li><a class="current" href="{{ .Site.BaseUrl }}/" title="">Home</a></li>
 					<li><a href="{{ .Site.BaseUrl }}/">Templates</a>
 						<ul class="subpages">
 							<li><a href="{{ .Site.BaseUrl }}/archetype">Archetypes</a></li>
 							<li><a href="{{ .Site.BaseUrl }}/group">Groups</a></li>
+							<li><a href="{{ .Site.BaseUrl }}/homepage">Home Page</a></li>
 							<li><a href="{{ .Site.BaseUrl }}/list">Lists</a></li>
+							<li><a href="{{ .Site.BaseUrl }}/menu">Menus</a></li>
 							<li><a href="{{ .Site.BaseUrl }}/partial">Partials</a></li>
 							<li><a href="{{ .Site.BaseUrl }}/single">Singles</a></li>
 							<li><a href="{{ .Site.BaseUrl }}/static">Static</a></li>

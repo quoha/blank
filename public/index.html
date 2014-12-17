@@ -62,7 +62,7 @@
 
 	<div class="row smaller">
 		<div class="col c5 smaller">
-			<h1><a href="index.html">BLANK</a></h1>
+			<h1><a href="http://blank.mdhender.com/index.html">BLANK</a></h1>
 		</div>
 
 		<div class="col c7 aligncenter">
@@ -76,12 +76,14 @@
 		<div class="col c2 alignleft">
 			<nav>
 				<ul class="menu">
-					<li><a class="current" href="/" title="">Home</a></li>
+					<li><a class="current" href="http://blank.mdhender.com/" title="">Home</a></li>
 					<li><a href="http://blank.mdhender.com/">Templates</a>
 						<ul class="subpages">
 							<li><a href="http://blank.mdhender.com/archetype">Archetypes</a></li>
 							<li><a href="http://blank.mdhender.com/group">Groups</a></li>
+							<li><a href="http://blank.mdhender.com/homepage">Home Page</a></li>
 							<li><a href="http://blank.mdhender.com/list">Lists</a></li>
+							<li><a href="http://blank.mdhender.com/menu">Menus</a></li>
 							<li><a href="http://blank.mdhender.com/partial">Partials</a></li>
 							<li><a href="http://blank.mdhender.com/single">Singles</a></li>
 							<li><a href="http://blank.mdhender.com/static">Static</a></li>
@@ -115,17 +117,202 @@
 				
 					<article>
 						
-							<h1>Welcome to the blank template <a href="http://blank.mdhender.com/post/2014/12/16/welcome/">&raquo;</a></h1>
-							<small><time datetime="2014-12-16T11:38:47-06:00" pubdate data-updated="true">Tuesday, December 16, 2014, 11:38:47 CST</time></small>
+							<h1>A Simple Menu <a href="http://blank.mdhender.com/post/simple-menu/">&raquo;</a></h1>
+							<small><time datetime="2014-12-17T15:39:00-06:00" pubdate data-updated="true">Wednesday, December 17, 2014, 15:39:00 CST</time></small>
 							
 
-<p>Integer efficitur lectus turpis, at vestibulum nisi tempor a. Sed vitae pharetra erat. Integer gravida felis eu metus vulputate, id tempus felis faucibus. Morbi eros ex, tincidunt in lorem ac, lobortis fermentum nunc.</p>
+<p><a href="http://gohugo.io/">Hugo</a> comes with the ability to control how <a href="http://gohugo.io/extras/menus/">menus</a>
+get generated. This article will focus on just a few features - the mininum needed to make a set of
+static menus look like they are dynamic.</p>
 
-<p>Vestibulum in aliquam felis, sit amet sollicitudin eros. Proin commodo euismod purus scelerisque egestas. Morbi in nibh massa. Vivamus pellentesque magna a felis pretium finibus. Sed quam elit, feugiat ac semper id, commodo a dui. Vivamus pretium consequat massa non tristique. Donec et ultrices metus. Aenean imperdiet, sapien eu tempor aliquam, orci leo elementum sem, eu fermentum tortor odio in metus. Aliquam erat volutpat. Nam nec tortor arcu.</p>
+<p>I think that it is easiest to create a static version of what I am after and then
+make changes to turn it into a template. That works really well with the <a href="http://gohugo.io/extras/livereload/">live reload</a>
+feature.</p>
 
-<h2 id="toc_0">Id Rutrum Nisi</h2>
+<p>As always, you can find all of this at my <a href="https://github.com/quoha/blank">repo</a>.</p>
 
-<p>Maecenas sit amet lacus tellus. Ut consequat iaculis massa, ac tristique nisl viverra et. Suspendisse pretium orci augue, eget maximus nisi eleifend et. Donec ut mollis dolor. Nunc vel magna tempus, placerat eros sit amet, euismod mi. Quisque aliquam ligula at dictum aliquet. Suspendisse blandit ipsum eget ligula ullamcorper mattis. Curabitur feugiat lacus sollicitudin quam ultricies gravida. Donec id venenatis justo, id rutrum nisi. Donec laoreet ultrices ante at ultricies. Morbi rhoncus, nibh eu cursus vehicula, est est molestie augue, sed consectetur tortor eros non dui. Aliquam erat volutpat. Duis eget lacus at arcu pretium consequat. Suspendisse potenti. In aliquet fringilla est, et consequat orci maximus dignissim. Pellentesque dolor nisl, molestie at egestas at, dignissim et nunc.</p>
+<h2 id="toc_0">A Hard-Coded List</h2>
+
+<p>The site&rsquo;s menu is simply going to list most of the categories and provide a link to the list page
+for the category. My theme has support for showing the &ldquo;current&rdquo; menu item by highlighting it, so
+I would like to use that.</p>
+
+<p>Here&rsquo;s what the generated HTML should look like.</p>
+
+<pre><code>&lt;nav&gt;
+	&lt;ul class=&quot;menu&quot;&gt;
+		&lt;li&gt;&lt;a class=&quot;current&quot; href=&quot;{{ .Site.BaseUrl }}/&quot; title=&quot;&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;{{ .Site.BaseUrl }}/&quot;&gt;Templates&lt;/a&gt;
+			&lt;ul class=&quot;subpages&quot;&gt;
+				&lt;li&gt;&lt;a href=&quot;{{ .Site.BaseUrl }}/archetype&quot;&gt;Archetypes&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;{{ .Site.BaseUrl }}/group&quot;&gt;Groups&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;{{ .Site.BaseUrl }}/homepage&quot;&gt;Home Page&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;{{ .Site.BaseUrl }}/list&quot;&gt;Lists&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;{{ .Site.BaseUrl }}/menu&quot;&gt;Menus&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;{{ .Site.BaseUrl }}/partial&quot;&gt;Partials&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;{{ .Site.BaseUrl }}/single&quot;&gt;Singles&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;{{ .Site.BaseUrl }}/static&quot;&gt;Static&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;{{ .Site.BaseUrl }}/syntax&quot;&gt;Syntax&lt;/a&gt;&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;{{ .Site.BaseUrl }}/best&quot;&gt;Best Practices&lt;/a&gt;
+		&lt;li&gt;&lt;a href=&quot;{{ .Site.BaseUrl }}/misc&quot;&gt;Miscellaneous&lt;/a&gt;
+		&lt;li&gt;&lt;a href=&quot;{{ .Site.BaseUrl }}/privacy&quot;&gt;Privacy&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;{{ .Site.BaseUrl }}/about&quot;&gt;About&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/nav&gt;
+</code></pre>
+
+<p>Note that I added the &ldquo;current&rdquo; class. To give it that dynamic feel, I want the menu item
+highlighting to change to reflect the currently displayed content. That is not as hard as
+it might seem.</p>
+
+<p>I am using <code>.Site.BaseUrl</code> on the off-chance that I move this site to a sub-directory on
+my web site. I doubt that will ever happen, but it is a good idea, especially if you are
+working on a theme since you can&rsquo;t predict what users will do with it.</p>
+
+<h2 id="toc_1">Setting up the Front Matter</h2>
+
+<p>Hugo expects to find menu definitions in the front matter, so that is where I will start.</p>
+
+<p>I want my menu to sort of mirror the tag and category structure, so I set my &ldquo;menu&rdquo; to the
+name of the menu that I want to associate the content with. For example, this article is
+about menus, so I add the following to my front matter:</p>
+
+<pre><code>menu = &quot;menus&quot;
+</code></pre>
+
+<p>For my &ldquo;about&rdquo; page, I set the value to &ldquo;about.&rdquo; For an article about the home page, I would
+set it to &ldquo;homepage.&rdquo; That aligns very nicely with the paths in my menu structure.</p>
+
+<h2 id="toc_2">Create a Partial</h2>
+
+<p>I like to create partial templates for most of my work, and this is no different.</p>
+
+<pre><code>{{ &quot;&lt;!-- hugo: enter themes/blank/partials/nav.html --&gt;&quot; | safeHtml }}
+&lt;nav&gt;
+	&lt;ul&gt;
+		&lt;li&gt;&lt;a class=&quot;current&quot; href=&quot;{{ .Site.BaseUrl }}/&quot; title=&quot;&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;{{ .Site.BaseUrl }}/&quot;&gt;Templates&lt;/a&gt;
+			&lt;ul class=&quot;subpages&quot;&gt;
+				&lt;li&gt;&lt;a href=&quot;{{ .Site.BaseUrl }}/archetype&quot;&gt;Archetypes&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;{{ .Site.BaseUrl }}/group&quot;&gt;Groups&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;{{ .Site.BaseUrl }}/homepage&quot;&gt;Home Page&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;{{ .Site.BaseUrl }}/list&quot;&gt;Lists&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;{{ .Site.BaseUrl }}/menu&quot;&gt;Menus&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;{{ .Site.BaseUrl }}/partial&quot;&gt;Partials&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;{{ .Site.BaseUrl }}/single&quot;&gt;Singles&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;{{ .Site.BaseUrl }}/static&quot;&gt;Static&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;{{ .Site.BaseUrl }}/syntax&quot;&gt;Syntax&lt;/a&gt;&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;{{ .Site.BaseUrl }}/best&quot;&gt;Best Practices&lt;/a&gt;
+		&lt;li&gt;&lt;a href=&quot;{{ .Site.BaseUrl }}/misc&quot;&gt;Miscellaneous&lt;/a&gt;
+		&lt;li&gt;&lt;a href=&quot;{{ .Site.BaseUrl }}/privacy&quot;&gt;Privacy&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;{{ .Site.BaseUrl }}/about&quot;&gt;About&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/nav&gt;
+{{ &quot;&lt;!-- hugo: exit themes/blank/partials/nav.html --&gt;&quot; | safeHtml }}
+</code></pre>
+
+<p>In my template, I call the partial:</p>
+
+<pre><code>{{ partial &quot;nav.html&quot; . }}
+</code></pre>
+
+<p>I keep a browser window open next to my text editor so that I can see the changes every time
+I save the file.</p>
+
+<h2 id="toc_3">Front Matter Variables</h2>
+
+<p>When you define a variable in the front matter, Hugo stores it in the <code>.Params</code> map. You just
+have to add the name of the variable to reference it:</p>
+
+<pre><code>.Params.menu
+</code></pre>
+
+<p>We can use a simple test to determine which menu item to highlight: if the articles &ldquo;menu&rdquo; variable is
+the same as the menu item&rsquo;s path, then it should be highlighted.</p>
+
+<pre><code>{{ if eq &quot;archetypes&quot; .Params.menu }}class=&quot;current&quot;{{end}}
+</code></pre>
+
+<p>One of the nice features about the <code>.Params</code> map is that it doesn&rsquo;t throw an error if the variable
+isn&rsquo;t defined. That means we can use <code>.Params.menu</code> even if the user forgets to define it in their
+front matter.</p>
+
+<p>(Note - if you are doing something like this, you should provide a default like <code>menu = &quot;none&quot;</code> in your archetypes.)</p>
+
+<p>Let&rsquo;s update all the lines with that test:</p>
+
+<pre><code>&lt;li&gt;&lt;a {{ if eq &quot;archetypes&quot; .Params.menu }}class=&quot;current&quot;{{end}} href=&quot;{{ .Site.BaseUrl }}/archetype&quot;&gt;Archetypes&lt;/a&gt;&lt;/li&gt;
+
+</code></pre>
+
+<p>That works pretty well. If an article defines a menu, then the corresponding menu item is highlighted.
+There are a couple of problems, though. If the article doesn&rsquo;t define a menu, then nothing is highlighted.
+Or if it defines one but there&rsquo;s a typo (say &ldquo;archetype&rdquo; or &ldquo;architypes&rdquo;), then nothing is highlighted.</p>
+
+<p>While that second issue is generally an unsolvable problem, I want the easy out for the first - highlight the Home menu.</p>
+
+<h2 id="toc_4">Defaulting a Variable</h2>
+
+<p>This should be an easy thing to do: if the menu isn&rsquo;t defined, provide a default value of &ldquo;home.&rdquo;</p>
+
+<p>My favorite way to do that is with the &ldquo;with&rdquo; template command:</p>
+
+<pre><code>{{ with (or .Params.menu &quot;home&quot;) }}
+</code></pre>
+
+<p>That reads &ldquo;In the following block, use .Params.menu if it is defined, otherwise use the value &lsquo;home&rsquo;.&rdquo; It&rsquo;s nifty.</p>
+
+<pre><code>{{ with (or .Params.menu &quot;home&quot;) }}
+	&lt;ul class=&quot;menu&quot;&gt;
+		&lt;li&gt;&lt;a {{ if eq &quot;home&quot; . }}class=&quot;current&quot;{{ end }} href=&quot;{{ .Site.BaseUrl }}/&quot; title=&quot;&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+</code></pre>
+
+<p>Saving that, though, causes problems with the generated page because the &ldquo;with&rdquo; command resets &ldquo;.&rdquo; and
+that means <code>.Site</code> is no longer valid. The fix is to do the variable-local-shuffle:</p>
+
+<pre><code>{{ $baseUrl := .Site.BaseUrl }}
+{{ with (or .Params.menu &quot;home&quot;) }}
+	&lt;ul class=&quot;menu&quot;&gt;
+		&lt;li&gt;&lt;a {{ if eq &quot;home&quot; . }}class=&quot;current&quot;{{ end }} href=&quot;{{ $baseUrl }}/&quot; title=&quot;&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+</code></pre>
+
+<h2 id="toc_5">The Final Partial</h2>
+
+<p>My theme&rsquo;s <code>layous/partials/nav.html</code> contains:</p>
+
+<pre><code>
+{{ &quot;&lt;!-- hugo: enter themes/blank/partials/nav.html --&gt;&quot; | safeHtml }}
+&lt;nav&gt;
+{{ $baseUrl := .Site.BaseUrl }}
+{{ with (or .Params.menu &quot;home&quot;) }}
+	&lt;ul class=&quot;menu&quot;&gt;
+		&lt;li&gt;&lt;a {{ if eq &quot;home&quot; . }}class=&quot;current&quot;{{ end }} href=&quot;{{ $baseUrl }}/&quot; title=&quot;&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;{{ $baseUrl }}/&quot; title=&quot;&quot;&gt;Templates&lt;/a&gt;
+			&lt;ul class=&quot;subpages&quot;&gt;
+				&lt;li&gt;&lt;a {{ if eq &quot;archetypes&quot; . }}class=&quot;current&quot;{{end}} href=&quot;{{ $baseUrl }}/archetype&quot;&gt;Archetypes&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a {{ if eq &quot;groups&quot;     . }}class=&quot;current&quot;{{end}} href=&quot;{{ $baseUrl }}/group&quot;&gt;Groups&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a {{ if eq &quot;homepage&quot;   . }}class=&quot;current&quot;{{end}} href=&quot;{{ $baseUrl }}/homepage&quot;&gt;Home Page&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a {{ if eq &quot;lists&quot;      . }}class=&quot;current&quot;{{end}} href=&quot;{{ $baseUrl }}/list&quot;&gt;Lists&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a {{ if eq &quot;menus&quot;      . }}class=&quot;current&quot;{{end}} href=&quot;{{ $baseUrl }}/menu&quot;&gt;Menus&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a {{ if eq &quot;partial&quot;    . }}class=&quot;current&quot;{{end}} href=&quot;{{ $baseUrl }}/partial&quot;&gt;Partials&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a {{ if eq &quot;single&quot;     . }}class=&quot;current&quot;{{end}} href=&quot;{{ $baseUrl }}/single&quot;&gt;Singles&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a {{ if eq &quot;static&quot;     . }}class=&quot;current&quot;{{end}} href=&quot;{{ $baseUrl }}/static&quot;&gt;Static&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a {{ if eq &quot;syntax&quot;     . }}class=&quot;current&quot;{{end}} href=&quot;{{ $baseUrl }}/syntax&quot;&gt;Syntax&lt;/a&gt;&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/li&gt;
+		&lt;li&gt;&lt;a {{ if eq &quot;best&quot;    . }}class=&quot;current&quot;{{end}} href=&quot;{{ $baseUrl }}/best&quot;&gt;Best Practices&lt;/a&gt;
+		&lt;li&gt;&lt;a {{ if eq &quot;misc&quot;    . }}class=&quot;current&quot;{{end}} href=&quot;{{ $baseUrl }}/misc&quot;&gt;Miscellaneous&lt;/a&gt;
+		&lt;li&gt;&lt;a {{ if eq &quot;privacy&quot; . }}class=&quot;current&quot;{{end}} href=&quot;{{ $baseUrl }}/privacy&quot;&gt;Privacy&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a {{ if eq &quot;about&quot;   . }}class=&quot;current&quot;{{end}} href=&quot;{{ $baseUrl }}/about&quot;&gt;About&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+{{ end }}
+&lt;/nav&gt;
+{{ &quot;&lt;!-- hugo: exit themes/blank/partials/nav.html --&gt;&quot; | safeHtml }}
+</code></pre>
 
 						
 					</article>
@@ -135,7 +322,51 @@
 					<article>
 						
 							<hr />
-							<h1>Nec Tortor Arcu <a href="http://blank.mdhender.com/post/2014/12/08/nec-tortor-arcu/">&raquo;</a></h1>
+							<h1>Overview of Taxonomies <a href="http://blank.mdhender.com/group/overview/">&raquo;</a></h1>
+							<small><time datetime="2014-12-16T13:57:47-06:00" pubdate data-updated="true">Tuesday, December 16, 2014</time></small>
+						    <p><a href="http://gohugo.io/">Hugo</a> has an exceptionally flexible system for managing with taxonomies.
+That&rsquo;s just a fancy way to say that Hugo helps you to classify and organize your site&rsquo;s content.</p>
+
+							<a href="/group/overview/">Read More &raquo;</a>
+						
+					</article>
+				
+			
+				
+					<article>
+						
+							<hr />
+							<h1>Overview of Taxonomies <a href="http://blank.mdhender.com/post/overview-of-taxonomies/">&raquo;</a></h1>
+							<small><time datetime="2014-12-16T13:57:47-06:00" pubdate data-updated="true">Tuesday, December 16, 2014</time></small>
+						    <p><a href="http://gohugo.io/">Hugo</a> has an exceptionally flexible system for organizing and indexing your content: taxonomies.</p>
+
+<p>I visualize taxonomies as a sort of encyclopedia. It&rsquo;s a really odd encyclopedia because every volume of
+my metaphorical set is about a different topic. There&rsquo;s a volume on chimpanzees and a volume on baseball
+players and one on Shakespeare.</p>
+
+							<a href="/post/overview-of-taxonomies/">Read More &raquo;</a>
+						
+					</article>
+				
+			
+				
+					<article>
+						
+							<hr />
+							<h1>Welcome to the blank template <a href="http://blank.mdhender.com/post/welcome/">&raquo;</a></h1>
+							<small><time datetime="2014-12-16T11:38:47-06:00" pubdate data-updated="true">Tuesday, December 16, 2014</time></small>
+						    <p>Integer efficitur lectus turpis, at vestibulum nisi tempor a. Sed vitae pharetra erat. Integer gravida felis eu metus vulputate, id tempus felis faucibus. Morbi eros ex, tincidunt in lorem ac, lobortis fermentum nunc.</p>
+
+							<a href="/post/welcome/">Read More &raquo;</a>
+						
+					</article>
+				
+			
+				
+					<article>
+						
+							<hr />
+							<h1>Nec Tortor Arcu <a href="http://blank.mdhender.com/post/nec-tortor-arcu/">&raquo;</a></h1>
 							<small><time datetime="2014-12-08T21:50:32-06:00" pubdate data-updated="true">Monday, December 8, 2014</time></small>
 						    <p>Vestibulum in aliquam felis, sit amet sollicitudin eros. Proin commodo
 euismod purus scelerisque egestas. Morbi in nibh massa. Vivamus
@@ -145,7 +376,7 @@ tristique. Donec et ultrices metus. Aenean imperdiet, sapien eu tempor
 aliquam, orci leo elementum sem, eu fermentum tortor odio in metus.
 Aliquam erat volutpat. Nam nec tortor arcu.</p>
 
-							<a href="/post/2014/12/08/nec-tortor-arcu/">Read More &raquo;</a>
+							<a href="/post/nec-tortor-arcu/">Read More &raquo;</a>
 						
 					</article>
 				
@@ -154,7 +385,7 @@ Aliquam erat volutpat. Nam nec tortor arcu.</p>
 					<article>
 						
 							<hr />
-							<h1>Tincidunt Tellus Eu <a href="http://blank.mdhender.com/post/2014/12/07/tincidunt-tellus-eu/">&raquo;</a></h1>
+							<h1>Tincidunt Tellus Eu <a href="http://blank.mdhender.com/post/tincidunt-tellus-eu/">&raquo;</a></h1>
 							<small><time datetime="2014-12-07T09:59:01-06:00" pubdate data-updated="true">Sunday, December 7, 2014</time></small>
 						    <p>Nam vulputate ultrices blandit. Interdum et malesuada fames ac ante
 ipsum primis in faucibus. Aenean in blandit turpis, vel pellentesque
@@ -169,7 +400,7 @@ nec, tempus lacus. In vitae hendrerit purus, nec faucibus lacus. Sed
 dignissim sed turpis sed sagittis. Nam nec turpis mollis, pharetra sem
 vitae, vehicula quam.</p>
 
-							<a href="/post/2014/12/07/tincidunt-tellus-eu/">Read More &raquo;</a>
+							<a href="/post/tincidunt-tellus-eu/">Read More &raquo;</a>
 						
 					</article>
 				
@@ -178,14 +409,14 @@ vitae, vehicula quam.</p>
 					<article>
 						
 							<hr />
-							<h1>Feugiat Venenatis <a href="http://blank.mdhender.com/post/2014/12/06/feugiat-venenatis/">&raquo;</a></h1>
+							<h1>Feugiat Venenatis <a href="http://blank.mdhender.com/post/feugiat-venenatis/">&raquo;</a></h1>
 							<small><time datetime="2014-12-06T15:43:52-06:00" pubdate data-updated="true">Saturday, December 6, 2014</time></small>
 						    <p>Integer efficitur lectus turpis, at vestibulum nisi
 tempor a. Sed vitae pharetra erat. Integer gravida felis eu metus
 vulputate, id tempus felis faucibus. Morbi eros ex, tincidunt in lorem
 ac, lobortis fermentum nunc.</p>
 
-							<a href="/post/2014/12/06/feugiat-venenatis/">Read More &raquo;</a>
+							<a href="/post/feugiat-venenatis/">Read More &raquo;</a>
 						
 					</article>
 				
@@ -194,13 +425,13 @@ ac, lobortis fermentum nunc.</p>
 					<article>
 						
 							<hr />
-							<h1>Vitae Pharetra Erat <a href="http://blank.mdhender.com/post/2014/12/05/vitae-pharetra-erat/">&raquo;</a></h1>
+							<h1>Vitae Pharetra Erat <a href="http://blank.mdhender.com/post/vitae-pharetra-erat/">&raquo;</a></h1>
 							<small><time datetime="2014-12-05T22:15:13-06:00" pubdate data-updated="true">Friday, December 5, 2014</time></small>
 						    <p>Integer gravida felis eu metus
 vulputate, id tempus felis faucibus. Morbi eros ex, tincidunt in lorem
 ac, lobortis fermentum nunc.</p>
 
-							<a href="/post/2014/12/05/vitae-pharetra-erat/">Read More &raquo;</a>
+							<a href="/post/vitae-pharetra-erat/">Read More &raquo;</a>
 						
 					</article>
 				
@@ -209,7 +440,7 @@ ac, lobortis fermentum nunc.</p>
 					<article>
 						
 							<hr />
-							<h1>Imperdiet Maximus Ligula <a href="http://blank.mdhender.com/post/2014/12/04/imperdiet-maximus-ligula/">&raquo;</a></h1>
+							<h1>Imperdiet Maximus Ligula <a href="http://blank.mdhender.com/post/imperdiet-maximus-ligula/">&raquo;</a></h1>
 							<small><time datetime="2014-12-04T21:42:24-06:00" pubdate data-updated="true">Thursday, December 4, 2014</time></small>
 						    <p>Aliquam feugiat aliquam dignissim. Sed sit amet mi semper, convallis
 nulla non, facilisis nunc. Phasellus sodales fermentum sapien, quis
@@ -220,7 +451,7 @@ arcu, sed scelerisque purus varius et. Morbi nibh tortor, posuere at
 condimentum sit amet, tincidunt sed elit. Ut mauris purus, pharetra at
 feugiat venenatis, maximus in libero.</p>
 
-							<a href="/post/2014/12/04/imperdiet-maximus-ligula/">Read More &raquo;</a>
+							<a href="/post/imperdiet-maximus-ligula/">Read More &raquo;</a>
 						
 					</article>
 				

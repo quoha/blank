@@ -4,7 +4,7 @@ Description = ""
 Categories = ["archetypes", "best", "misc", "partials", "static", "syntax", "tags"]
 Tags = ["amet", "bibendum"]
 date = "2014-12-08T21:50:32-06:00"
-menu = "main"
+menu = "home"
 weight = 5
 type = "post"
 +++

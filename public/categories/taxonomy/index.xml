@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Taxonomy on blank </title>
+      <generator uri="https://hugo.spf13.com">Hugo</generator>
+    <link>http://blank.mdhender.com/categories/taxonomy/index.xml/</link>
+    <language>en-us</language>
+    <author>Michael D Henderson</author>
+    
+    <updated>Tue, 16 Dec 2014 13:57:47 CST</updated>
+    
+    <item>
+      <title>Overview of Taxonomies</title>
+      <link>http://blank.mdhender.com/group/overview/</link>
+      <pubDate>Tue, 16 Dec 2014 13:57:47 CST</pubDate>
+      <author>Michael D Henderson</author>
+      <guid>http://blank.mdhender.com/group/overview/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; has an exceptionally flexible system for managing with taxonomies.
+That&amp;rsquo;s just a fancy way to say that Hugo helps you to classify and organize your site&amp;rsquo;s content.&lt;/p&gt;
+
+&lt;p&gt;I visualize taxonomies as a sort of encyclopedia. It&amp;rsquo;s a really odd encyclopedia because every volume of
+my metaphorical set is about a different topic. There&amp;rsquo;s a volume on chimpanzees and a volume on baseball
+players and one on Shakespeare.&lt;/p&gt;
+
+&lt;p&gt;Another odd thing about this set is that none of the volumes contain any articles. Open one to any
+page and all you&amp;rsquo;ll find is a link to the article. The articles are stored in a separate file cabinet.
+That allows articles to be referenced in multiple volumes. For example, my post on a tribe of baseball
+playing chimpanzees named The Shakespeares could be included in three separate volumes.&lt;/p&gt;
+
+&lt;p&gt;If you can accept the metaphor, then it&amp;rsquo;s not much of a leap to say:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Taxonomy - a volume of the encyclopedia. It can contain any number of articles.&lt;/li&gt;
+&lt;li&gt;Term - the name of an article. It&amp;rsquo;s the key used to find the actual article. Terms are unique within a taxonomy. The same term can appear in multiple taxonomies.&lt;/li&gt;
+&lt;li&gt;Content - the article. The content of the article can be referenced from any number of taxonomies but can only be referenced by one term.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Overview of Taxonomies</title>
+      <link>http://blank.mdhender.com/post/overview-of-taxonomies/</link>
+      <pubDate>Tue, 16 Dec 2014 13:57:47 CST</pubDate>
+      <author>Michael D Henderson</author>
+      <guid>http://blank.mdhender.com/post/overview-of-taxonomies/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; has an exceptionally flexible system for organizing and indexing your content: taxonomies.&lt;/p&gt;
+
+&lt;p&gt;I visualize taxonomies as a sort of encyclopedia. It&amp;rsquo;s a really odd encyclopedia because every volume of
+my metaphorical set is about a different topic. There&amp;rsquo;s a volume on chimpanzees and a volume on baseball
+players and one on Shakespeare.&lt;/p&gt;
+
+&lt;p&gt;Another odd thing about this set is that none of the volumes contain any articles. Open one to any
+page and all you&amp;rsquo;ll find is a link to the article. The articles are stored in a separate file cabinet.
+That allows articles to be referenced in multiple volumes. For example, my post on a tribe of baseball
+playing chimpanzees named The Shakespeares could be included in three separate volumes.&lt;/p&gt;
+
+&lt;p&gt;If you can accept the metaphor, then it&amp;rsquo;s not much of a leap to say:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Taxonomy - a volume of the encyclopedia. It can contain any number of articles.&lt;/li&gt;
+&lt;li&gt;Term - the name of an article. It&amp;rsquo;s the key used to find the actual article. Terms are unique within a taxonomy. The same term can appear in multiple taxonomies.&lt;/li&gt;
+&lt;li&gt;Content - the article. The content of the article can be referenced from any number of taxonomies but can only be referenced by one term.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

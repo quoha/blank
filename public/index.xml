@@ -7,32 +7,334 @@
     <language>en-us</language>
     <author>Michael D Henderson</author>
     
-    <updated>Tue, 16 Dec 2014 13:57:47 CST</updated>
+    <updated>Wed, 17 Dec 2014 15:39:00 CST</updated>
     
     <item>
-      <title>Overview of Tags and Categories</title>
+      <title>A Simple Menu</title>
+      <link>http://blank.mdhender.com/post/simple-menu/</link>
+      <pubDate>Wed, 17 Dec 2014 15:39:00 CST</pubDate>
+      <author>Michael D Henderson</author>
+      <guid>http://blank.mdhender.com/post/simple-menu/</guid>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;http://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; comes with the ability to control how &lt;a href=&#34;http://gohugo.io/extras/menus/&#34;&gt;menus&lt;/a&gt;
+get generated. This article will focus on just a few features - the mininum needed to make a set of
+static menus look like they are dynamic.&lt;/p&gt;
+
+&lt;p&gt;I think that it is easiest to create a static version of what I am after and then
+make changes to turn it into a template. That works really well with the &lt;a href=&#34;http://gohugo.io/extras/livereload/&#34;&gt;live reload&lt;/a&gt;
+feature.&lt;/p&gt;
+
+&lt;p&gt;As always, you can find all of this at my &lt;a href=&#34;https://github.com/quoha/blank&#34;&gt;repo&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_0&#34;&gt;A Hard-Coded List&lt;/h2&gt;
+
+&lt;p&gt;The site&amp;rsquo;s menu is simply going to list most of the categories and provide a link to the list page
+for the category. My theme has support for showing the &amp;ldquo;current&amp;rdquo; menu item by highlighting it, so
+I would like to use that.&lt;/p&gt;
+
+&lt;p&gt;Here&amp;rsquo;s what the generated HTML should look like.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;nav&amp;gt;
+	&amp;lt;ul class=&amp;quot;menu&amp;quot;&amp;gt;
+		&amp;lt;li&amp;gt;&amp;lt;a class=&amp;quot;current&amp;quot; href=&amp;quot;{{ .Site.BaseUrl }}/&amp;quot; title=&amp;quot;&amp;quot;&amp;gt;Home&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+		&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ .Site.BaseUrl }}/&amp;quot;&amp;gt;Templates&amp;lt;/a&amp;gt;
+			&amp;lt;ul class=&amp;quot;subpages&amp;quot;&amp;gt;
+				&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ .Site.BaseUrl }}/archetype&amp;quot;&amp;gt;Archetypes&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+				&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ .Site.BaseUrl }}/group&amp;quot;&amp;gt;Groups&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+				&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ .Site.BaseUrl }}/homepage&amp;quot;&amp;gt;Home Page&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+				&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ .Site.BaseUrl }}/list&amp;quot;&amp;gt;Lists&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+				&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ .Site.BaseUrl }}/menu&amp;quot;&amp;gt;Menus&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+				&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ .Site.BaseUrl }}/partial&amp;quot;&amp;gt;Partials&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+				&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ .Site.BaseUrl }}/single&amp;quot;&amp;gt;Singles&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+				&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ .Site.BaseUrl }}/static&amp;quot;&amp;gt;Static&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+				&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ .Site.BaseUrl }}/syntax&amp;quot;&amp;gt;Syntax&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+			&amp;lt;/ul&amp;gt;
+		&amp;lt;/li&amp;gt;
+		&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ .Site.BaseUrl }}/best&amp;quot;&amp;gt;Best Practices&amp;lt;/a&amp;gt;
+		&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ .Site.BaseUrl }}/misc&amp;quot;&amp;gt;Miscellaneous&amp;lt;/a&amp;gt;
+		&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ .Site.BaseUrl }}/privacy&amp;quot;&amp;gt;Privacy&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+		&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ .Site.BaseUrl }}/about&amp;quot;&amp;gt;About&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+	&amp;lt;/ul&amp;gt;
+&amp;lt;/nav&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Note that I added the &amp;ldquo;current&amp;rdquo; class. To give it that dynamic feel, I want the menu item
+highlighting to change to reflect the currently displayed content. That is not as hard as
+it might seem.&lt;/p&gt;
+
+&lt;p&gt;I am using &lt;code&gt;.Site.BaseUrl&lt;/code&gt; on the off-chance that I move this site to a sub-directory on
+my web site. I doubt that will ever happen, but it is a good idea, especially if you are
+working on a theme since you can&amp;rsquo;t predict what users will do with it.&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_1&#34;&gt;Setting up the Front Matter&lt;/h2&gt;
+
+&lt;p&gt;Hugo expects to find menu definitions in the front matter, so that is where I will start.&lt;/p&gt;
+
+&lt;p&gt;I want my menu to sort of mirror the tag and category structure, so I set my &amp;ldquo;menu&amp;rdquo; to the
+name of the menu that I want to associate the content with. For example, this article is
+about menus, so I add the following to my front matter:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;menu = &amp;quot;menus&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;For my &amp;ldquo;about&amp;rdquo; page, I set the value to &amp;ldquo;about.&amp;rdquo; For an article about the home page, I would
+set it to &amp;ldquo;homepage.&amp;rdquo; That aligns very nicely with the paths in my menu structure.&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_2&#34;&gt;Create a Partial&lt;/h2&gt;
+
+&lt;p&gt;I like to create partial templates for most of my work, and this is no different.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ &amp;quot;&amp;lt;!-- hugo: enter themes/blank/partials/nav.html --&amp;gt;&amp;quot; | safeHtml }}
+&amp;lt;nav&amp;gt;
+	&amp;lt;ul&amp;gt;
+		&amp;lt;li&amp;gt;&amp;lt;a class=&amp;quot;current&amp;quot; href=&amp;quot;{{ .Site.BaseUrl }}/&amp;quot; title=&amp;quot;&amp;quot;&amp;gt;Home&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+		&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ .Site.BaseUrl }}/&amp;quot;&amp;gt;Templates&amp;lt;/a&amp;gt;
+			&amp;lt;ul class=&amp;quot;subpages&amp;quot;&amp;gt;
+				&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ .Site.BaseUrl }}/archetype&amp;quot;&amp;gt;Archetypes&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+				&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ .Site.BaseUrl }}/group&amp;quot;&amp;gt;Groups&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+				&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ .Site.BaseUrl }}/homepage&amp;quot;&amp;gt;Home Page&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+				&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ .Site.BaseUrl }}/list&amp;quot;&amp;gt;Lists&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+				&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ .Site.BaseUrl }}/menu&amp;quot;&amp;gt;Menus&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+				&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ .Site.BaseUrl }}/partial&amp;quot;&amp;gt;Partials&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+				&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ .Site.BaseUrl }}/single&amp;quot;&amp;gt;Singles&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+				&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ .Site.BaseUrl }}/static&amp;quot;&amp;gt;Static&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+				&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ .Site.BaseUrl }}/syntax&amp;quot;&amp;gt;Syntax&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+			&amp;lt;/ul&amp;gt;
+		&amp;lt;/li&amp;gt;
+		&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ .Site.BaseUrl }}/best&amp;quot;&amp;gt;Best Practices&amp;lt;/a&amp;gt;
+		&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ .Site.BaseUrl }}/misc&amp;quot;&amp;gt;Miscellaneous&amp;lt;/a&amp;gt;
+		&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ .Site.BaseUrl }}/privacy&amp;quot;&amp;gt;Privacy&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+		&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ .Site.BaseUrl }}/about&amp;quot;&amp;gt;About&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+	&amp;lt;/ul&amp;gt;
+&amp;lt;/nav&amp;gt;
+{{ &amp;quot;&amp;lt;!-- hugo: exit themes/blank/partials/nav.html --&amp;gt;&amp;quot; | safeHtml }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In my template, I call the partial:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ partial &amp;quot;nav.html&amp;quot; . }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I keep a browser window open next to my text editor so that I can see the changes every time
+I save the file.&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_3&#34;&gt;Front Matter Variables&lt;/h2&gt;
+
+&lt;p&gt;When you define a variable in the front matter, Hugo stores it in the &lt;code&gt;.Params&lt;/code&gt; map. You just
+have to add the name of the variable to reference it:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;.Params.menu
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We can use a simple test to determine which menu item to highlight: if the articles &amp;ldquo;menu&amp;rdquo; variable is
+the same as the menu item&amp;rsquo;s path, then it should be highlighted.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ if eq &amp;quot;archetypes&amp;quot; .Params.menu }}class=&amp;quot;current&amp;quot;{{end}}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;One of the nice features about the &lt;code&gt;.Params&lt;/code&gt; map is that it doesn&amp;rsquo;t throw an error if the variable
+isn&amp;rsquo;t defined. That means we can use &lt;code&gt;.Params.menu&lt;/code&gt; even if the user forgets to define it in their
+front matter.&lt;/p&gt;
+
+&lt;p&gt;(Note - if you are doing something like this, you should provide a default like &lt;code&gt;menu = &amp;quot;none&amp;quot;&lt;/code&gt; in your archetypes.)&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s update all the lines with that test:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;li&amp;gt;&amp;lt;a {{ if eq &amp;quot;archetypes&amp;quot; .Params.menu }}class=&amp;quot;current&amp;quot;{{end}} href=&amp;quot;{{ .Site.BaseUrl }}/archetype&amp;quot;&amp;gt;Archetypes&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;That works pretty well. If an article defines a menu, then the corresponding menu item is highlighted.
+There are a couple of problems, though. If the article doesn&amp;rsquo;t define a menu, then nothing is highlighted.
+Or if it defines one but there&amp;rsquo;s a typo (say &amp;ldquo;archetype&amp;rdquo; or &amp;ldquo;architypes&amp;rdquo;), then nothing is highlighted.&lt;/p&gt;
+
+&lt;p&gt;While that second issue is generally an unsolvable problem, I want the easy out for the first - highlight the Home menu.&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_4&#34;&gt;Defaulting a Variable&lt;/h2&gt;
+
+&lt;p&gt;This should be an easy thing to do: if the menu isn&amp;rsquo;t defined, provide a default value of &amp;ldquo;home.&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;My favorite way to do that is with the &amp;ldquo;with&amp;rdquo; template command:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ with (or .Params.menu &amp;quot;home&amp;quot;) }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;That reads &amp;ldquo;In the following block, use .Params.menu if it is defined, otherwise use the value &amp;lsquo;home&amp;rsquo;.&amp;rdquo; It&amp;rsquo;s nifty.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ with (or .Params.menu &amp;quot;home&amp;quot;) }}
+	&amp;lt;ul class=&amp;quot;menu&amp;quot;&amp;gt;
+		&amp;lt;li&amp;gt;&amp;lt;a {{ if eq &amp;quot;home&amp;quot; . }}class=&amp;quot;current&amp;quot;{{ end }} href=&amp;quot;{{ .Site.BaseUrl }}/&amp;quot; title=&amp;quot;&amp;quot;&amp;gt;Home&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Saving that, though, causes problems with the generated page because the &amp;ldquo;with&amp;rdquo; command resets &amp;ldquo;.&amp;rdquo; and
+that means &lt;code&gt;.Site&lt;/code&gt; is no longer valid. The fix is to do the variable-local-shuffle:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ $baseUrl := .Site.BaseUrl }}
+{{ with (or .Params.menu &amp;quot;home&amp;quot;) }}
+	&amp;lt;ul class=&amp;quot;menu&amp;quot;&amp;gt;
+		&amp;lt;li&amp;gt;&amp;lt;a {{ if eq &amp;quot;home&amp;quot; . }}class=&amp;quot;current&amp;quot;{{ end }} href=&amp;quot;{{ $baseUrl }}/&amp;quot; title=&amp;quot;&amp;quot;&amp;gt;Home&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;toc_5&#34;&gt;The Final Partial&lt;/h2&gt;
+
+&lt;p&gt;My theme&amp;rsquo;s &lt;code&gt;layous/partials/nav.html&lt;/code&gt; contains:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;
+{{ &amp;quot;&amp;lt;!-- hugo: enter themes/blank/partials/nav.html --&amp;gt;&amp;quot; | safeHtml }}
+&amp;lt;nav&amp;gt;
+{{ $baseUrl := .Site.BaseUrl }}
+{{ with (or .Params.menu &amp;quot;home&amp;quot;) }}
+	&amp;lt;ul class=&amp;quot;menu&amp;quot;&amp;gt;
+		&amp;lt;li&amp;gt;&amp;lt;a {{ if eq &amp;quot;home&amp;quot; . }}class=&amp;quot;current&amp;quot;{{ end }} href=&amp;quot;{{ $baseUrl }}/&amp;quot; title=&amp;quot;&amp;quot;&amp;gt;Home&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+		&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ $baseUrl }}/&amp;quot; title=&amp;quot;&amp;quot;&amp;gt;Templates&amp;lt;/a&amp;gt;
+			&amp;lt;ul class=&amp;quot;subpages&amp;quot;&amp;gt;
+				&amp;lt;li&amp;gt;&amp;lt;a {{ if eq &amp;quot;archetypes&amp;quot; . }}class=&amp;quot;current&amp;quot;{{end}} href=&amp;quot;{{ $baseUrl }}/archetype&amp;quot;&amp;gt;Archetypes&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+				&amp;lt;li&amp;gt;&amp;lt;a {{ if eq &amp;quot;groups&amp;quot;     . }}class=&amp;quot;current&amp;quot;{{end}} href=&amp;quot;{{ $baseUrl }}/group&amp;quot;&amp;gt;Groups&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+				&amp;lt;li&amp;gt;&amp;lt;a {{ if eq &amp;quot;homepage&amp;quot;   . }}class=&amp;quot;current&amp;quot;{{end}} href=&amp;quot;{{ $baseUrl }}/homepage&amp;quot;&amp;gt;Home Page&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+				&amp;lt;li&amp;gt;&amp;lt;a {{ if eq &amp;quot;lists&amp;quot;      . }}class=&amp;quot;current&amp;quot;{{end}} href=&amp;quot;{{ $baseUrl }}/list&amp;quot;&amp;gt;Lists&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+				&amp;lt;li&amp;gt;&amp;lt;a {{ if eq &amp;quot;menus&amp;quot;      . }}class=&amp;quot;current&amp;quot;{{end}} href=&amp;quot;{{ $baseUrl }}/menu&amp;quot;&amp;gt;Menus&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+				&amp;lt;li&amp;gt;&amp;lt;a {{ if eq &amp;quot;partial&amp;quot;    . }}class=&amp;quot;current&amp;quot;{{end}} href=&amp;quot;{{ $baseUrl }}/partial&amp;quot;&amp;gt;Partials&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+				&amp;lt;li&amp;gt;&amp;lt;a {{ if eq &amp;quot;single&amp;quot;     . }}class=&amp;quot;current&amp;quot;{{end}} href=&amp;quot;{{ $baseUrl }}/single&amp;quot;&amp;gt;Singles&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+				&amp;lt;li&amp;gt;&amp;lt;a {{ if eq &amp;quot;static&amp;quot;     . }}class=&amp;quot;current&amp;quot;{{end}} href=&amp;quot;{{ $baseUrl }}/static&amp;quot;&amp;gt;Static&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+				&amp;lt;li&amp;gt;&amp;lt;a {{ if eq &amp;quot;syntax&amp;quot;     . }}class=&amp;quot;current&amp;quot;{{end}} href=&amp;quot;{{ $baseUrl }}/syntax&amp;quot;&amp;gt;Syntax&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+			&amp;lt;/ul&amp;gt;
+		&amp;lt;/li&amp;gt;
+		&amp;lt;li&amp;gt;&amp;lt;a {{ if eq &amp;quot;best&amp;quot;    . }}class=&amp;quot;current&amp;quot;{{end}} href=&amp;quot;{{ $baseUrl }}/best&amp;quot;&amp;gt;Best Practices&amp;lt;/a&amp;gt;
+		&amp;lt;li&amp;gt;&amp;lt;a {{ if eq &amp;quot;misc&amp;quot;    . }}class=&amp;quot;current&amp;quot;{{end}} href=&amp;quot;{{ $baseUrl }}/misc&amp;quot;&amp;gt;Miscellaneous&amp;lt;/a&amp;gt;
+		&amp;lt;li&amp;gt;&amp;lt;a {{ if eq &amp;quot;privacy&amp;quot; . }}class=&amp;quot;current&amp;quot;{{end}} href=&amp;quot;{{ $baseUrl }}/privacy&amp;quot;&amp;gt;Privacy&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+		&amp;lt;li&amp;gt;&amp;lt;a {{ if eq &amp;quot;about&amp;quot;   . }}class=&amp;quot;current&amp;quot;{{end}} href=&amp;quot;{{ $baseUrl }}/about&amp;quot;&amp;gt;About&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+	&amp;lt;/ul&amp;gt;
+{{ end }}
+&amp;lt;/nav&amp;gt;
+{{ &amp;quot;&amp;lt;!-- hugo: exit themes/blank/partials/nav.html --&amp;gt;&amp;quot; | safeHtml }}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Privacy Policy</title>
+      <link>http://blank.mdhender.com/privacy/</link>
+      <pubDate>Wed, 17 Dec 2014 14:04:34 CST</pubDate>
+      <author>Michael D Henderson</author>
+      <guid>http://blank.mdhender.com/privacy/</guid>
+      <description>
+
+&lt;p&gt;My privacy policy is simple: I don&amp;rsquo;t intend to track or sell any information
+about you or your browsing history.&lt;/p&gt;
+
+&lt;p&gt;My hosting company may log information about visitors, though. They currently
+track originating IP address, URL requested, and the time of the request. Logs
+are stored on their servers and in their backups for an unknown length of time.&lt;/p&gt;
+
+&lt;p&gt;The primary purpose of these logs is to track usage and to monitor for attempts
+at exploiting the system.&lt;/p&gt;
+
+&lt;p&gt;If you find this logging troublesome, please don&amp;rsquo;t use this site.&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_0&#34;&gt;Future Plans&lt;/h2&gt;
+
+&lt;p&gt;I intend to use Google Analytics in the future. I also intend to integrate
+some social media tools such as Discourse, Facebook, and Twitter. When I do,
+I will update this page.&lt;/p&gt;
+
+&lt;p&gt;The purpose of these changes is to learn how to integrate the tools with Hugo
+and then to teach others to do the same.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>About This Site</title>
+      <link>http://blank.mdhender.com/about/</link>
+      <pubDate>Wed, 17 Dec 2014 14:04:34 CST</pubDate>
+      <author>Michael D Henderson</author>
+      <guid>http://blank.mdhender.com/about/</guid>
+      <description>
+
+&lt;p&gt;This site is a tutorial for the Hugo static web site generator.
+Everything is generated from the &lt;a href=&#34;https://github.com/quoha/blank&#34;&gt;source&lt;/a&gt; stored on GitHub.&lt;/p&gt;
+
+&lt;p&gt;Please remember that this site shows how to use Hugo, not how to design a web site.
+Hugo can easily generate a responsive website, but this theme is kept simple to avoid distractions.&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_0&#34;&gt;Design&lt;/h2&gt;
+
+&lt;p&gt;The main design for this site comes from the &lt;a href=&#34;http://andreasviklund.com/templates/origo/&#34;&gt;Origo&lt;/a&gt; theme
+by &lt;a href=&#34;http://andreasviklund.com/templates/andreas01&#34;&gt;Andreas Viklund&lt;/a&gt;. Some alternate layouts are taken
+from his &lt;a href=&#34;http://andreasviklund.com/templates/basic-reader/&#34;&gt;Basic Reader&lt;/a&gt; theme.&lt;/p&gt;
+
+&lt;p&gt;I use the &lt;a href=&#34;http://html5reset.org/&#34;&gt;HTML5 Reset&lt;/a&gt; and plan on integrating some of the beautiful typography
+from &lt;a href=&#34;http://typeplate.com/&#34;&gt;Typeplate&lt;/a&gt;. The articles on changing colors use some of these
+&lt;a href=&#34;http://www.dtelepathy.com/blog/inspiration/beautiful-color-palettes-for-your-next-web-project&#34;&gt;palletes&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_1&#34;&gt;Thanks&lt;/h2&gt;
+
+&lt;p&gt;Thanks to everyone on the &lt;a href=&#34;http://discuss.gohugo.io/&#34;&gt;Hugo forum&lt;/a&gt; for their help in understanding how
+Hugo works and how it should be used.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Overview of Taxonomies</title>
       <link>http://blank.mdhender.com/group/overview/</link>
       <pubDate>Tue, 16 Dec 2014 13:57:47 CST</pubDate>
       <author>Michael D Henderson</author>
       <guid>http://blank.mdhender.com/group/overview/</guid>
-      <description>
+      <description>&lt;p&gt;&lt;a href=&#34;http://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; has an exceptionally flexible system for managing with taxonomies.
+That&amp;rsquo;s just a fancy way to say that Hugo helps you to classify and organize your site&amp;rsquo;s content.&lt;/p&gt;
 
-&lt;p&gt;Integer efficitur lectus turpis, at vestibulum nisi tempor a. Sed vitae pharetra erat. Integer gravida felis eu metus vulputate, id tempus felis faucibus. Morbi eros ex, tincidunt in lorem ac, lobortis fermentum nunc.&lt;/p&gt;
+&lt;p&gt;I visualize taxonomies as a sort of encyclopedia. It&amp;rsquo;s a really odd encyclopedia because every volume of
+my metaphorical set is about a different topic. There&amp;rsquo;s a volume on chimpanzees and a volume on baseball
+players and one on Shakespeare.&lt;/p&gt;
 
-&lt;p&gt;Vestibulum in aliquam felis, sit amet sollicitudin eros. Proin commodo euismod purus scelerisque egestas. Morbi in nibh massa. Vivamus pellentesque magna a felis pretium finibus. Sed quam elit, feugiat ac semper id, commodo a dui. Vivamus pretium consequat massa non tristique. Donec et ultrices metus. Aenean imperdiet, sapien eu tempor aliquam, orci leo elementum sem, eu fermentum tortor odio in metus. Aliquam erat volutpat. Nam nec tortor arcu.&lt;/p&gt;
+&lt;p&gt;Another odd thing about this set is that none of the volumes contain any articles. Open one to any
+page and all you&amp;rsquo;ll find is a link to the article. The articles are stored in a separate file cabinet.
+That allows articles to be referenced in multiple volumes. For example, my post on a tribe of baseball
+playing chimpanzees named The Shakespeares could be included in three separate volumes.&lt;/p&gt;
 
-&lt;h2 id=&#34;toc_0&#34;&gt;Id Rutrum Nisi&lt;/h2&gt;
+&lt;p&gt;If you can accept the metaphor, then it&amp;rsquo;s not much of a leap to say:&lt;/p&gt;
 
-&lt;p&gt;Maecenas sit amet lacus tellus. Ut consequat iaculis massa, ac tristique nisl viverra et. Suspendisse pretium orci augue, eget maximus nisi eleifend et. Donec ut mollis dolor. Nunc vel magna tempus, placerat eros sit amet, euismod mi. Quisque aliquam ligula at dictum aliquet. Suspendisse blandit ipsum eget ligula ullamcorper mattis. Curabitur feugiat lacus sollicitudin quam ultricies gravida. Donec id venenatis justo, id rutrum nisi. Donec laoreet ultrices ante at ultricies. Morbi rhoncus, nibh eu cursus vehicula, est est molestie augue, sed consectetur tortor eros non dui. Aliquam erat volutpat. Duis eget lacus at arcu pretium consequat. Suspendisse potenti. In aliquet fringilla est, et consequat orci maximus dignissim. Pellentesque dolor nisl, molestie at egestas at, dignissim et nunc.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Taxonomy - a volume of the encyclopedia. It can contain any number of articles.&lt;/li&gt;
+&lt;li&gt;Term - the name of an article. It&amp;rsquo;s the key used to find the actual article. Terms are unique within a taxonomy. The same term can appear in multiple taxonomies.&lt;/li&gt;
+&lt;li&gt;Content - the article. The content of the article can be referenced from any number of taxonomies but can only be referenced by one term.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Overview of Taxonomies</title>
+      <link>http://blank.mdhender.com/post/overview-of-taxonomies/</link>
+      <pubDate>Tue, 16 Dec 2014 13:57:47 CST</pubDate>
+      <author>Michael D Henderson</author>
+      <guid>http://blank.mdhender.com/post/overview-of-taxonomies/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; has an exceptionally flexible system for organizing and indexing your content: taxonomies.&lt;/p&gt;
+
+&lt;p&gt;I visualize taxonomies as a sort of encyclopedia. It&amp;rsquo;s a really odd encyclopedia because every volume of
+my metaphorical set is about a different topic. There&amp;rsquo;s a volume on chimpanzees and a volume on baseball
+players and one on Shakespeare.&lt;/p&gt;
+
+&lt;p&gt;Another odd thing about this set is that none of the volumes contain any articles. Open one to any
+page and all you&amp;rsquo;ll find is a link to the article. The articles are stored in a separate file cabinet.
+That allows articles to be referenced in multiple volumes. For example, my post on a tribe of baseball
+playing chimpanzees named The Shakespeares could be included in three separate volumes.&lt;/p&gt;
+
+&lt;p&gt;If you can accept the metaphor, then it&amp;rsquo;s not much of a leap to say:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Taxonomy - a volume of the encyclopedia. It can contain any number of articles.&lt;/li&gt;
+&lt;li&gt;Term - the name of an article. It&amp;rsquo;s the key used to find the actual article. Terms are unique within a taxonomy. The same term can appear in multiple taxonomies.&lt;/li&gt;
+&lt;li&gt;Content - the article. The content of the article can be referenced from any number of taxonomies but can only be referenced by one term.&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     
     <item>
       <title>Welcome to the blank template</title>
-      <link>http://blank.mdhender.com/post/2014/12/16/welcome/</link>
+      <link>http://blank.mdhender.com/post/welcome/</link>
       <pubDate>Tue, 16 Dec 2014 11:38:47 CST</pubDate>
       <author>Michael D Henderson</author>
-      <guid>http://blank.mdhender.com/post/2014/12/16/welcome/</guid>
+      <guid>http://blank.mdhender.com/post/welcome/</guid>
       <description>
 
 &lt;p&gt;Integer efficitur lectus turpis, at vestibulum nisi tempor a. Sed vitae pharetra erat. Integer gravida felis eu metus vulputate, id tempus felis faucibus. Morbi eros ex, tincidunt in lorem ac, lobortis fermentum nunc.&lt;/p&gt;
@@ -47,10 +349,10 @@
     
     <item>
       <title>Nec Tortor Arcu</title>
-      <link>http://blank.mdhender.com/post/2014/12/08/nec-tortor-arcu/</link>
+      <link>http://blank.mdhender.com/post/nec-tortor-arcu/</link>
       <pubDate>Mon, 08 Dec 2014 21:50:32 CST</pubDate>
       <author>Michael D Henderson</author>
-      <guid>http://blank.mdhender.com/post/2014/12/08/nec-tortor-arcu/</guid>
+      <guid>http://blank.mdhender.com/post/nec-tortor-arcu/</guid>
       <description>
 
 &lt;p&gt;Vestibulum in aliquam felis, sit amet sollicitudin eros. Proin commodo
@@ -80,10 +382,10 @@ Pellentesque dolor nisl, molestie at egestas at, dignissim et nunc.&lt;/p&gt;
     
     <item>
       <title>Tincidunt Tellus Eu</title>
-      <link>http://blank.mdhender.com/post/2014/12/07/tincidunt-tellus-eu/</link>
+      <link>http://blank.mdhender.com/post/tincidunt-tellus-eu/</link>
       <pubDate>Sun, 07 Dec 2014 09:59:01 CST</pubDate>
       <author>Michael D Henderson</author>
-      <guid>http://blank.mdhender.com/post/2014/12/07/tincidunt-tellus-eu/</guid>
+      <guid>http://blank.mdhender.com/post/tincidunt-tellus-eu/</guid>
       <description>
 
 &lt;p&gt;Nam vulputate ultrices blandit. Interdum et malesuada fames ac ante
@@ -129,10 +431,10 @@ consectetur. Sed eget enim velit.&lt;/p&gt;
     
     <item>
       <title>Feugiat Venenatis</title>
-      <link>http://blank.mdhender.com/post/2014/12/06/feugiat-venenatis/</link>
+      <link>http://blank.mdhender.com/post/feugiat-venenatis/</link>
       <pubDate>Sat, 06 Dec 2014 15:43:52 CST</pubDate>
       <author>Michael D Henderson</author>
-      <guid>http://blank.mdhender.com/post/2014/12/06/feugiat-venenatis/</guid>
+      <guid>http://blank.mdhender.com/post/feugiat-venenatis/</guid>
       <description>
 
 &lt;p&gt;Integer efficitur lectus turpis, at vestibulum nisi
@@ -163,10 +465,10 @@ feugiat venenatis, maximus in libero.&lt;/p&gt;
     
     <item>
       <title>Vitae Pharetra Erat</title>
-      <link>http://blank.mdhender.com/post/2014/12/05/vitae-pharetra-erat/</link>
+      <link>http://blank.mdhender.com/post/vitae-pharetra-erat/</link>
       <pubDate>Fri, 05 Dec 2014 22:15:13 CST</pubDate>
       <author>Michael D Henderson</author>
-      <guid>http://blank.mdhender.com/post/2014/12/05/vitae-pharetra-erat/</guid>
+      <guid>http://blank.mdhender.com/post/vitae-pharetra-erat/</guid>
       <description>
 
 &lt;p&gt;Integer gravida felis eu metus
@@ -203,10 +505,10 @@ Proin vitae porttitor massa.&lt;/p&gt;
     
     <item>
       <title>Imperdiet Maximus Ligula</title>
-      <link>http://blank.mdhender.com/post/2014/12/04/imperdiet-maximus-ligula/</link>
+      <link>http://blank.mdhender.com/post/imperdiet-maximus-ligula/</link>
       <pubDate>Thu, 04 Dec 2014 21:42:24 CST</pubDate>
       <author>Michael D Henderson</author>
-      <guid>http://blank.mdhender.com/post/2014/12/04/imperdiet-maximus-ligula/</guid>
+      <guid>http://blank.mdhender.com/post/imperdiet-maximus-ligula/</guid>
       <description>
 
 &lt;p&gt;Aliquam feugiat aliquam dignissim. Sed sit amet mi semper, convallis

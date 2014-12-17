@@ -4,7 +4,7 @@ Description = "Nunc nec ex sed orci lacinia"
 Categories = ["archetypes", "best", "misc", "partials", "static", "syntax", "tags"]
 Tags = ["elementum", "bibendum"]
 date = "2014-12-06T15:43:52-06:00"
-menu = "main"
+menu = "home"
 weight = 5
 type = "post"
 +++

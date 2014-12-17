@@ -21,7 +21,8 @@ MetaDataFormat = "toml"
 #############################################################################
 #
 [permalinks]
-	post = "/post/:year/:month/:day/:filename/"
+	dated_post = "/post/:year/:month/:day/:filename/"
+	post = "/post/:filename/"
 	top  = "/:filename/"
 
 #############################################################################
