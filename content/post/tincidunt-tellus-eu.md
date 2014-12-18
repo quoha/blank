@@ -1,7 +1,7 @@
 +++
 title = "Tincidunt Tellus Eu"
 Description = ""
-Categories = ["archetypes", "best", "misc", "partials", "static", "syntax", "tags"]
+Categories = ["partials"]
 Tags = ["elementum", "bibendum"]
 date = "2014-12-07T09:59:01-06:00"
 menu = "home"

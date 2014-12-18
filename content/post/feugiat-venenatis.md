@@ -1,7 +1,7 @@
 +++
 title = "Feugiat Venenatis"
 Description = "Nunc nec ex sed orci lacinia"
-Categories = ["archetypes", "best", "misc", "partials", "static", "syntax", "tags"]
+Categories = ["archetypes", "best"]
 Tags = ["elementum", "bibendum"]
 date = "2014-12-06T15:43:52-06:00"
 menu = "home"

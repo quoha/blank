@@ -1,28 +1,27 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-      <title>Best on blank </title>
+      <title>Singles on blank </title>
       <generator uri="https://hugo.spf13.com">Hugo</generator>
-    <link>http://blank.mdhender.com/categories/best/index.xml/</link>
+    <link>http://blank.mdhender.com/categories/singles/index.xml/</link>
     <language>en-us</language>
     <author>Michael D Henderson</author>
     
-    <updated>Sat, 06 Dec 2014 15:43:52 CST</updated>
+    <updated>Fri, 05 Dec 2014 22:15:13 CST</updated>
     
     <item>
-      <title>Feugiat Venenatis</title>
-      <link>http://blank.mdhender.com/post/feugiat-venenatis/</link>
-      <pubDate>Sat, 06 Dec 2014 15:43:52 CST</pubDate>
+      <title>Vitae Pharetra Erat</title>
+      <link>http://blank.mdhender.com/post/vitae-pharetra-erat/</link>
+      <pubDate>Fri, 05 Dec 2014 22:15:13 CST</pubDate>
       <author>Michael D Henderson</author>
-      <guid>http://blank.mdhender.com/post/feugiat-venenatis/</guid>
+      <guid>http://blank.mdhender.com/post/vitae-pharetra-erat/</guid>
       <description>
 
-&lt;p&gt;Integer efficitur lectus turpis, at vestibulum nisi
-tempor a. Sed vitae pharetra erat. Integer gravida felis eu metus
+&lt;p&gt;Integer gravida felis eu metus
 vulputate, id tempus felis faucibus. Morbi eros ex, tincidunt in lorem
 ac, lobortis fermentum nunc.&lt;/p&gt;
 
-&lt;h2 id=&#34;toc_0&#34;&gt;Urna Consectetur Quis&lt;/h2&gt;
+&lt;h2 id=&#34;toc_0&#34;&gt;Suspendisse lorem eros&lt;/h2&gt;
 
 &lt;p&gt;Sed semper justo ac ullamcorper laoreet. Donec et maximus justo. Morbi
 a libero vel ex congue dictum. Suspendisse convallis imperdiet sapien
@@ -40,6 +39,13 @@ cursus dui. Mauris dapibus consectetur mattis. Ut bibendum fermentum
 arcu, sed scelerisque purus varius et. Morbi nibh tortor, posuere at
 condimentum sit amet, tincidunt sed elit. Ut mauris purus, pharetra at
 feugiat venenatis, maximus in libero.&lt;/p&gt;
+
+&lt;p&gt;Fusce non risus turpis. Ut in dui sed felis vehicula luctus ac ut
+urna. Suspendisse dictum ante sodales elit blandit, quis malesuada
+eros malesuada. Duis et sem eu ligula hendrerit ornare quis ac odio.
+Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+posuere cubilia Curae; Donec eu ante vitae nulla pharetra ultrices.
+Proin vitae porttitor massa.&lt;/p&gt;
 </description>
     </item>
     

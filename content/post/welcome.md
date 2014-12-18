@@ -1,7 +1,7 @@
 +++
 title = "Welcome to the blank template"
 Description = "overview of the blank template"
-Categories = ["archetype", "best", "group", "misc", "partial", "static", "syntax"]
+Categories = ["misc"]
 Tags = ["intro"]
 date = "2014-12-16T11:38:47-06:00"
 menu = "home"

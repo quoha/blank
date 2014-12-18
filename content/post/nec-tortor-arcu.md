@@ -1,7 +1,7 @@
 +++
 title = "Nec Tortor Arcu"
 Description = ""
-Categories = ["archetypes", "best", "misc", "partials", "static", "syntax", "tags"]
+Categories = ["homepage", "static"]
 Tags = ["amet", "bibendum"]
 date = "2014-12-08T21:50:32-06:00"
 menu = "home"

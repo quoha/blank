@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-      <title>Static on blank </title>
+      <title>Homepage on blank </title>
       <generator uri="https://hugo.spf13.com">Hugo</generator>
-    <link>http://blank.mdhender.com/categories/static/index.xml/</link>
+    <link>http://blank.mdhender.com/categories/homepage/index.xml/</link>
     <language>en-us</language>
     <author>Michael D Henderson</author>
     

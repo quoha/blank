@@ -1,7 +1,7 @@
 +++
 title = "Imperdiet Maximus Ligula"
 Description = "Vestibulum ut pulvinar dui."
-Categories = ["archetypes", "best", "misc", "partials", "static", "syntax", "tags"]
+Categories = ["lists", "syntax"]
 Tags = ["amet", "tincidunt"]
 date = "2014-12-04T21:42:24-06:00"
 menu = "home"
