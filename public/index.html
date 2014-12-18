@@ -59,43 +59,47 @@
 <body class="light blue smaller freestyle01">
 
 <div id="layout">
-
-	<div class="row smaller">
-		<div class="col c5 smaller">
-			<h1><a href="http://blank.mdhender.com/index.html">BLANK</a></h1>
-		</div>
-
-		<div class="col c7 aligncenter">
-			<p class="slogan">starting from scratch...</p>
-		</div>
+<!-- hugo: enter themes/blank/partials/banner.html -->
+<div class="row smaller">
+	<div class="col c5 smaller">
+		<h1><a href="http://blank.mdhender.com/">BLANK</a></h1>
 	</div>
-
+	<div class="col c7 aligncenter">
+		<p class="slogan">starting from scratch...</p>
+	</div>
+</div>
+<!-- hugo: exit  themes/blank/partials/banner.html -->
 
 
 	<div class="row">
 		<div class="col c2 alignleft">
-			<nav>
-				<ul class="menu">
-					<li><a class="current" href="http://blank.mdhender.com/" title="">Home</a></li>
-					<li><a href="http://blank.mdhender.com/">Templates</a>
-						<ul class="subpages">
-							<li><a href="http://blank.mdhender.com/archetype">Archetypes</a></li>
-							<li><a href="http://blank.mdhender.com/group">Groups</a></li>
-							<li><a href="http://blank.mdhender.com/homepage">Home Page</a></li>
-							<li><a href="http://blank.mdhender.com/list">Lists</a></li>
-							<li><a href="http://blank.mdhender.com/menu">Menus</a></li>
-							<li><a href="http://blank.mdhender.com/partial">Partials</a></li>
-							<li><a href="http://blank.mdhender.com/single">Singles</a></li>
-							<li><a href="http://blank.mdhender.com/static">Static</a></li>
-							<li><a href="http://blank.mdhender.com/syntax">Syntax</a></li>
-						</ul>
-					</li>
-					<li><a href="http://blank.mdhender.com/best">Best Practices</a>
-					<li><a href="http://blank.mdhender.com/misc">Miscellaneous</a>
-					<li><a href="http://blank.mdhender.com/privacy">Privacy</a></li>
-					<li><a href="http://blank.mdhender.com/about">About</a></li>
-				</ul>
-			</nav>
+<!-- hugo: enter themes/blank/partials/nav.html -->
+<nav>
+
+
+	<ul class="menu">
+		<li><a class="current" href="http://blank.mdhender.com/" title="">Home</a></li>
+		<li><a href="http://blank.mdhender.com/" title="">Templates</a>
+			<ul class="subpages">
+				<li><a  href="http://blank.mdhender.com/archetype">Archetypes</a></li>
+				<li><a  href="http://blank.mdhender.com/group">Groups</a></li>
+				<li><a  href="http://blank.mdhender.com/homepage">Home Page</a></li>
+				<li><a  href="http://blank.mdhender.com/list">Lists</a></li>
+				<li><a  href="http://blank.mdhender.com/menu">Menus</a></li>
+				<li><a  href="http://blank.mdhender.com/partial">Partials</a></li>
+				<li><a  href="http://blank.mdhender.com/single">Singles</a></li>
+				<li><a  href="http://blank.mdhender.com/static">Static</a></li>
+				<li><a  href="http://blank.mdhender.com/syntax">Syntax</a></li>
+			</ul>
+		</li>
+		<li><a  href="http://blank.mdhender.com/best">Best Practices</a>
+		<li><a  href="http://blank.mdhender.com/misc">Miscellaneous</a>
+		<li><a  href="http://blank.mdhender.com/privacy">Privacy</a></li>
+		<li><a  href="http://blank.mdhender.com/about">About</a></li>
+	</ul>
+
+</nav>
+<!-- hugo: exit  themes/blank/partials/nav.html -->
 		</div>
  
 		<div class="col c8">
@@ -322,20 +326,6 @@ that means <code>.Site</code> is no longer valid. The fix is to do the variable-
 					<article>
 						
 							<hr />
-							<h1>Overview of Taxonomies <a href="http://blank.mdhender.com/group/overview/">&raquo;</a></h1>
-							<small><time datetime="2014-12-16T13:57:47-06:00" pubdate data-updated="true">Tuesday, December 16, 2014</time></small>
-						    <p><a href="http://gohugo.io/">Hugo</a> has an exceptionally flexible system for managing with taxonomies.
-That&rsquo;s just a fancy way to say that Hugo helps you to classify and organize your site&rsquo;s content.</p>
-
-							<a href="/group/overview/">Read More &raquo;</a>
-						
-					</article>
-				
-			
-				
-					<article>
-						
-							<hr />
 							<h1>Overview of Taxonomies <a href="http://blank.mdhender.com/post/overview-of-taxonomies/">&raquo;</a></h1>
 							<small><time datetime="2014-12-16T13:57:47-06:00" pubdate data-updated="true">Tuesday, December 16, 2014</time></small>
 						    <p><a href="http://gohugo.io/">Hugo</a> has an exceptionally flexible system for organizing and indexing your content: taxonomies.</p>
@@ -459,13 +449,14 @@ feugiat venenatis, maximus in libero.</p>
 		</div>
 
 		<div class="col c2">
-			<h3>Sidebar:</h3>
-			<p>This is the <a href="http://andreasviklund.com/templates/origo/">Origo</a> template, with the basic layout from the <a href="http://andreasviklund.com/templates/andreas01/">andreas01</a> template and the code base from <a href="http://andreasviklund.com/templates/freestyle/">Freestyle</a>.</p>
-
-			<h3>Links:</h3>
-			<p><a href="#">Sample link 1</a><br />
-			<a href="#">Sample link 2</a><br />
-			<a href="#">Sample link 3</a></p>
+<!-- hugo: enter themes/blank/partials/sidebar.html -->
+<h3>Links</h3>
+<ul>
+	<li><a href="http://gohugo.io/">Hugo</a></li>
+	<li><a href="http://discuss.gohugo.io/">Hugo Discussions</a></li>
+	<li><a href="https://github.com/quoha/blank/">Github Repo</a></li>
+</ul>
+<!-- hugo: exit  themes/blank/partials/sidebar.html -->
 		</div>
 	</div>
 

@@ -59,22 +59,19 @@
 <body class="light blue smaller freestyle01">
 
 <div id="layout">
-
-	<div class="row smaller">
-		<div class="col c5 smaller">
-			<h1><a href="http://blank.mdhender.com/index.html">BLANK</a></h1>
-		</div>
-
-		<div class="col c7 aligncenter">
-			<p class="slogan">starting from scratch...</p>
-		</div>
+<!-- hugo: enter themes/blank/partials/banner.html -->
+<div class="row smaller">
+	<div class="col c5 smaller">
+		<h1><a href="http://blank.mdhender.com/">BLANK</a></h1>
 	</div>
-
-
+	<div class="col c7 aligncenter">
+		<p class="slogan">starting from scratch...</p>
+	</div>
+</div>
+<!-- hugo: exit  themes/blank/partials/banner.html -->
 
 	<div class="row">
 		<div class="col c2 alignleft">
-
 <!-- hugo: enter themes/blank/partials/nav.html -->
 <nav>
 
@@ -101,9 +98,8 @@
 	</ul>
 
 </nav>
-<!-- hugo: exit themes/blank/partials/nav.html -->
+<!-- hugo: exit  themes/blank/partials/nav.html -->
 		</div>
- 
 		<div class="col c8">
 			<article>
 				<h1>Privacy Policy</h1>
@@ -132,12 +128,17 @@ and then to teach others to do the same.</p>
 
 			</article>
 		</div>
-
 		<div class="col c2">
-			
+<!-- hugo: enter themes/blank/partials/sidebar.html -->
+<h3>Links</h3>
+<ul>
+	<li><a href="http://gohugo.io/">Hugo</a></li>
+	<li><a href="http://discuss.gohugo.io/">Hugo Discussions</a></li>
+	<li><a href="https://github.com/quoha/blank/">Github Repo</a></li>
+</ul>
+<!-- hugo: exit  themes/blank/partials/sidebar.html -->
 		</div>
 	</div>
-
 	<div id="footer" class="row">
 		<div class="col c12 aligncenter">
 			<footer>
@@ -146,6 +147,5 @@ and then to teach others to do the same.</p>
 		</div>
 	</div>
 </div>
-
 </body>
 </html>

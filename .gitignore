@@ -2,5 +2,6 @@
 .DS_Store
 
 # packaging for webroot
+gitReady
 public.tgz
 pushIt

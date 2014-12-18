@@ -5,43 +5,12 @@
 <body class="light blue smaller freestyle01">
 <!-- { {  partial "shoutout.html" . } } -->
 <div id="layout">
-
-	<div class="row smaller">
-		<div class="col c5 smaller">
-			<h1><a href="{{ .Site.BaseUrl }}/index.html">BLANK</a></h1>
-		</div>
-
-		<div class="col c7 aligncenter">
-			<p class="slogan">starting from scratch...</p>
-		</div>
-	</div>
-
+{{ partial "banner.html" . }}
 {{ partial "theme/img_front.html" . }}
 
 	<div class="row">
 		<div class="col c2 alignleft">
-			<nav>
-				<ul class="menu">
-					<li><a class="current" href="{{ .Site.BaseUrl }}/" title="">Home</a></li>
-					<li><a href="{{ .Site.BaseUrl }}/">Templates</a>
-						<ul class="subpages">
-							<li><a href="{{ .Site.BaseUrl }}/archetype">Archetypes</a></li>
-							<li><a href="{{ .Site.BaseUrl }}/group">Groups</a></li>
-							<li><a href="{{ .Site.BaseUrl }}/homepage">Home Page</a></li>
-							<li><a href="{{ .Site.BaseUrl }}/list">Lists</a></li>
-							<li><a href="{{ .Site.BaseUrl }}/menu">Menus</a></li>
-							<li><a href="{{ .Site.BaseUrl }}/partial">Partials</a></li>
-							<li><a href="{{ .Site.BaseUrl }}/single">Singles</a></li>
-							<li><a href="{{ .Site.BaseUrl }}/static">Static</a></li>
-							<li><a href="{{ .Site.BaseUrl }}/syntax">Syntax</a></li>
-						</ul>
-					</li>
-					<li><a href="{{ .Site.BaseUrl }}/best">Best Practices</a>
-					<li><a href="{{ .Site.BaseUrl }}/misc">Miscellaneous</a>
-					<li><a href="{{ .Site.BaseUrl }}/privacy">Privacy</a></li>
-					<li><a href="{{ .Site.BaseUrl }}/about">About</a></li>
-				</ul>
-			</nav>
+{{ partial "nav.html" . }}
 		</div>
  
 		<div class="col c8">
@@ -82,13 +51,7 @@
 		</div>
 
 		<div class="col c2">
-			<h3>Sidebar:</h3>
-			<p>This is the <a href="http://andreasviklund.com/templates/origo/">Origo</a> template, with the basic layout from the <a href="http://andreasviklund.com/templates/andreas01/">andreas01</a> template and the code base from <a href="http://andreasviklund.com/templates/freestyle/">Freestyle</a>.</p>
-
-			<h3>Links:</h3>
-			<p><a href="#">Sample link 1</a><br />
-			<a href="#">Sample link 2</a><br />
-			<a href="#">Sample link 3</a></p>
+{{ partial "sidebar.html" . }}
 		</div>
 	</div>
 
