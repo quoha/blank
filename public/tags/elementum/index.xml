@@ -3,7 +3,7 @@
   <channel>
       <title>Elementum on blank </title>
       <generator uri="https://hugo.spf13.com">Hugo</generator>
-    <link>http://blank.mdhender.com/tags/elementum/index.xml/</link>
+    <link>http://localhost:1313/tags/elementum/index.xml/</link>
     <language>en-us</language>
     <author>Michael D Henderson</author>
     
@@ -11,10 +11,10 @@
     
     <item>
       <title>Tincidunt Tellus Eu</title>
-      <link>http://blank.mdhender.com/post/tincidunt-tellus-eu/</link>
+      <link>http://localhost:1313/post/tincidunt-tellus-eu/</link>
       <pubDate>Sun, 07 Dec 2014 09:59:01 CST</pubDate>
       <author>Michael D Henderson</author>
-      <guid>http://blank.mdhender.com/post/tincidunt-tellus-eu/</guid>
+      <guid>http://localhost:1313/post/tincidunt-tellus-eu/</guid>
       <description>
 
 &lt;p&gt;Nam vulputate ultrices blandit. Interdum et malesuada fames ac ante
@@ -60,10 +60,10 @@ consectetur. Sed eget enim velit.&lt;/p&gt;
     
     <item>
       <title>Feugiat Venenatis</title>
-      <link>http://blank.mdhender.com/post/feugiat-venenatis/</link>
+      <link>http://localhost:1313/post/feugiat-venenatis/</link>
       <pubDate>Sat, 06 Dec 2014 15:43:52 CST</pubDate>
       <author>Michael D Henderson</author>
-      <guid>http://blank.mdhender.com/post/feugiat-venenatis/</guid>
+      <guid>http://localhost:1313/post/feugiat-venenatis/</guid>
       <description>
 
 &lt;p&gt;Integer efficitur lectus turpis, at vestibulum nisi

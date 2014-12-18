@@ -3,7 +3,7 @@
   <channel>
       <title>Posts on blank </title>
       <generator uri="https://hugo.spf13.com">Hugo</generator>
-    <link>http://blank.mdhender.com/post/index.xml/</link>
+    <link>http://localhost:1313/post/index.xml/</link>
     <language>en-us</language>
     <author>Michael D Henderson</author>
     
@@ -11,10 +11,10 @@
     
     <item>
       <title>A Simple Menu</title>
-      <link>http://blank.mdhender.com/post/simple-menu/</link>
+      <link>http://localhost:1313/post/simple-menu/</link>
       <pubDate>Wed, 17 Dec 2014 15:39:00 CST</pubDate>
       <author>Michael D Henderson</author>
-      <guid>http://blank.mdhender.com/post/simple-menu/</guid>
+      <guid>http://localhost:1313/post/simple-menu/</guid>
       <description>
 
 &lt;p&gt;&lt;a href=&#34;http://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; comes with the ability to control how &lt;a href=&#34;http://gohugo.io/extras/menus/&#34;&gt;menus&lt;/a&gt;
@@ -214,10 +214,10 @@ that means &lt;code&gt;.Site&lt;/code&gt; is no longer valid. The fix is to do t
     
     <item>
       <title>Overview of Taxonomies</title>
-      <link>http://blank.mdhender.com/post/overview-of-taxonomies/</link>
+      <link>http://localhost:1313/post/overview-of-taxonomies/</link>
       <pubDate>Tue, 16 Dec 2014 13:57:47 CST</pubDate>
       <author>Michael D Henderson</author>
-      <guid>http://blank.mdhender.com/post/overview-of-taxonomies/</guid>
+      <guid>http://localhost:1313/post/overview-of-taxonomies/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; has an exceptionally flexible system for organizing and indexing your content: taxonomies.&lt;/p&gt;
 
 &lt;p&gt;I visualize taxonomies as a sort of encyclopedia. It&amp;rsquo;s a really odd encyclopedia because every volume of
@@ -241,10 +241,10 @@ playing chimpanzees named The Shakespeares could be included in three separate v
     
     <item>
       <title>Welcome to the blank template</title>
-      <link>http://blank.mdhender.com/post/welcome/</link>
+      <link>http://localhost:1313/post/welcome/</link>
       <pubDate>Tue, 16 Dec 2014 11:38:47 CST</pubDate>
       <author>Michael D Henderson</author>
-      <guid>http://blank.mdhender.com/post/welcome/</guid>
+      <guid>http://localhost:1313/post/welcome/</guid>
       <description>
 
 &lt;p&gt;Integer efficitur lectus turpis, at vestibulum nisi tempor a. Sed vitae pharetra erat. Integer gravida felis eu metus vulputate, id tempus felis faucibus. Morbi eros ex, tincidunt in lorem ac, lobortis fermentum nunc.&lt;/p&gt;
@@ -259,10 +259,10 @@ playing chimpanzees named The Shakespeares could be included in three separate v
     
     <item>
       <title>Nec Tortor Arcu</title>
-      <link>http://blank.mdhender.com/post/nec-tortor-arcu/</link>
+      <link>http://localhost:1313/post/nec-tortor-arcu/</link>
       <pubDate>Mon, 08 Dec 2014 21:50:32 CST</pubDate>
       <author>Michael D Henderson</author>
-      <guid>http://blank.mdhender.com/post/nec-tortor-arcu/</guid>
+      <guid>http://localhost:1313/post/nec-tortor-arcu/</guid>
       <description>
 
 &lt;p&gt;Vestibulum in aliquam felis, sit amet sollicitudin eros. Proin commodo
@@ -292,10 +292,10 @@ Pellentesque dolor nisl, molestie at egestas at, dignissim et nunc.&lt;/p&gt;
     
     <item>
       <title>Tincidunt Tellus Eu</title>
-      <link>http://blank.mdhender.com/post/tincidunt-tellus-eu/</link>
+      <link>http://localhost:1313/post/tincidunt-tellus-eu/</link>
       <pubDate>Sun, 07 Dec 2014 09:59:01 CST</pubDate>
       <author>Michael D Henderson</author>
-      <guid>http://blank.mdhender.com/post/tincidunt-tellus-eu/</guid>
+      <guid>http://localhost:1313/post/tincidunt-tellus-eu/</guid>
       <description>
 
 &lt;p&gt;Nam vulputate ultrices blandit. Interdum et malesuada fames ac ante
@@ -341,10 +341,10 @@ consectetur. Sed eget enim velit.&lt;/p&gt;
     
     <item>
       <title>Feugiat Venenatis</title>
-      <link>http://blank.mdhender.com/post/feugiat-venenatis/</link>
+      <link>http://localhost:1313/post/feugiat-venenatis/</link>
       <pubDate>Sat, 06 Dec 2014 15:43:52 CST</pubDate>
       <author>Michael D Henderson</author>
-      <guid>http://blank.mdhender.com/post/feugiat-venenatis/</guid>
+      <guid>http://localhost:1313/post/feugiat-venenatis/</guid>
       <description>
 
 &lt;p&gt;Integer efficitur lectus turpis, at vestibulum nisi
@@ -375,10 +375,10 @@ feugiat venenatis, maximus in libero.&lt;/p&gt;
     
     <item>
       <title>Vitae Pharetra Erat</title>
-      <link>http://blank.mdhender.com/post/vitae-pharetra-erat/</link>
+      <link>http://localhost:1313/post/vitae-pharetra-erat/</link>
       <pubDate>Fri, 05 Dec 2014 22:15:13 CST</pubDate>
       <author>Michael D Henderson</author>
-      <guid>http://blank.mdhender.com/post/vitae-pharetra-erat/</guid>
+      <guid>http://localhost:1313/post/vitae-pharetra-erat/</guid>
       <description>
 
 &lt;p&gt;Integer gravida felis eu metus
@@ -415,10 +415,10 @@ Proin vitae porttitor massa.&lt;/p&gt;
     
     <item>
       <title>Imperdiet Maximus Ligula</title>
-      <link>http://blank.mdhender.com/post/imperdiet-maximus-ligula/</link>
+      <link>http://localhost:1313/post/imperdiet-maximus-ligula/</link>
       <pubDate>Thu, 04 Dec 2014 21:42:24 CST</pubDate>
       <author>Michael D Henderson</author>
-      <guid>http://blank.mdhender.com/post/imperdiet-maximus-ligula/</guid>
+      <guid>http://localhost:1313/post/imperdiet-maximus-ligula/</guid>
       <description>
 
 &lt;p&gt;Aliquam feugiat aliquam dignissim. Sed sit amet mi semper, convallis

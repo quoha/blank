@@ -3,7 +3,7 @@
   <channel>
       <title>Aliquam on blank </title>
       <generator uri="https://hugo.spf13.com">Hugo</generator>
-    <link>http://blank.mdhender.com/tags/aliquam/index.xml/</link>
+    <link>http://localhost:1313/tags/aliquam/index.xml/</link>
     <language>en-us</language>
     <author>Michael D Henderson</author>
     
@@ -11,10 +11,10 @@
     
     <item>
       <title>Vitae Pharetra Erat</title>
-      <link>http://blank.mdhender.com/post/vitae-pharetra-erat/</link>
+      <link>http://localhost:1313/post/vitae-pharetra-erat/</link>
       <pubDate>Fri, 05 Dec 2014 22:15:13 CST</pubDate>
       <author>Michael D Henderson</author>
-      <guid>http://blank.mdhender.com/post/vitae-pharetra-erat/</guid>
+      <guid>http://localhost:1313/post/vitae-pharetra-erat/</guid>
       <description>
 
 &lt;p&gt;Integer gravida felis eu metus

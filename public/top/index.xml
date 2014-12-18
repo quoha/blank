@@ -3,7 +3,7 @@
   <channel>
       <title>Tops on blank </title>
       <generator uri="https://hugo.spf13.com">Hugo</generator>
-    <link>http://blank.mdhender.com/top/index.xml/</link>
+    <link>http://localhost:1313/top/index.xml/</link>
     <language>en-us</language>
     <author>Michael D Henderson</author>
     
@@ -11,10 +11,10 @@
     
     <item>
       <title>Privacy Policy</title>
-      <link>http://blank.mdhender.com/privacy/</link>
+      <link>http://localhost:1313/privacy/</link>
       <pubDate>Wed, 17 Dec 2014 14:04:34 CST</pubDate>
       <author>Michael D Henderson</author>
-      <guid>http://blank.mdhender.com/privacy/</guid>
+      <guid>http://localhost:1313/privacy/</guid>
       <description>
 
 &lt;p&gt;My privacy policy is simple: I don&amp;rsquo;t intend to track or sell any information
@@ -42,10 +42,10 @@ and then to teach others to do the same.&lt;/p&gt;
     
     <item>
       <title>About This Site</title>
-      <link>http://blank.mdhender.com/about/</link>
+      <link>http://localhost:1313/about/</link>
       <pubDate>Wed, 17 Dec 2014 14:04:34 CST</pubDate>
       <author>Michael D Henderson</author>
-      <guid>http://blank.mdhender.com/about/</guid>
+      <guid>http://localhost:1313/about/</guid>
       <description>
 
 &lt;p&gt;This site is a tutorial for the Hugo static web site generator.

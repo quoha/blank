@@ -3,7 +3,7 @@
   <channel>
       <title>Tags on blank </title>
       <generator uri="https://hugo.spf13.com">Hugo</generator>
-    <link>http://blank.mdhender.com/tags/tags/index.xml/</link>
+    <link>http://localhost:1313/tags/tags/index.xml/</link>
     <language>en-us</language>
     <author>Michael D Henderson</author>
     
@@ -11,10 +11,10 @@
     
     <item>
       <title>Overview of Taxonomies</title>
-      <link>http://blank.mdhender.com/post/overview-of-taxonomies/</link>
+      <link>http://localhost:1313/post/overview-of-taxonomies/</link>
       <pubDate>Tue, 16 Dec 2014 13:57:47 CST</pubDate>
       <author>Michael D Henderson</author>
-      <guid>http://blank.mdhender.com/post/overview-of-taxonomies/</guid>
+      <guid>http://localhost:1313/post/overview-of-taxonomies/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; has an exceptionally flexible system for organizing and indexing your content: taxonomies.&lt;/p&gt;
 
 &lt;p&gt;I visualize taxonomies as a sort of encyclopedia. It&amp;rsquo;s a really odd encyclopedia because every volume of

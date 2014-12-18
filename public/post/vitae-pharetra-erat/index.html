@@ -21,19 +21,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<link rel="shortcut icon" href="http://blank.mdhender.com/favicon.ico">
+<link rel="shortcut icon" href="http://localhost:1313/favicon.ico">
 
 
-<link rel="stylesheet" href="http://blank.mdhender.com/css/reset.css">
-<clink rel="stylesheet" href="http://blank.mdhender.com/css/suede.css">
+<link rel="stylesheet" href="http://localhost:1313/css/reset.css">
+<clink rel="stylesheet" href="http://localhost:1313/css/suede.css">
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Dosis" />
-<link rel="stylesheet" type="text/css" href="http://blank.mdhender.com/css/origo.css" title="Origo" media="all" />
+<link rel="stylesheet" type="text/css" href="http://localhost:1313/css/origo.css" title="Origo" media="all" />
 
 
-<script src="http://blank.mdhender.com/js/libs/prefixfree.min.js"></script>
+<script src="http://localhost:1313/js/libs/prefixfree.min.js"></script>
 
 
-<script src="http://blank.mdhender.com/js/libs/modernizr-2.8.3.dev.js"></script>
+<script src="http://localhost:1313/js/libs/modernizr-2.8.3.dev.js"></script>
 
 
 
@@ -62,7 +62,7 @@
 
 	<div class="row smaller">
 		<div class="col c5 smaller">
-			<h1><a href="http://blank.mdhender.com/index.html">BLANK</a></h1>
+			<h1><a href="http://localhost:1313/index.html">BLANK</a></h1>
 		</div>
 
 		<div class="col c7 aligncenter">
@@ -77,22 +77,22 @@
 			<nav>
 				<ul class="menu">
 					<li><a class="current" href="/" title="">Home</a></li>
-					<li><a href="http://blank.mdhender.com/">Templates</a>
+					<li><a href="http://localhost:1313/">Templates</a>
 						<ul class="subpages">
-							<li><a href="http://blank.mdhender.com/archetype">Archetypes</a></li>
-							<li><a href="http://blank.mdhender.com/group">Groups</a></li>
-							<li><a href="http://blank.mdhender.com/homepage">Home Page</a></li>
-							<li><a href="http://blank.mdhender.com/list">Lists</a></li>
-							<li><a href="http://blank.mdhender.com/partial">Partials</a></li>
-							<li><a href="http://blank.mdhender.com/single">Singles</a></li>
-							<li><a href="http://blank.mdhender.com/static">Static</a></li>
-							<li><a href="http://blank.mdhender.com/syntax">Syntax</a></li>
+							<li><a href="http://localhost:1313/archetype">Archetypes</a></li>
+							<li><a href="http://localhost:1313/group">Groups</a></li>
+							<li><a href="http://localhost:1313/homepage">Home Page</a></li>
+							<li><a href="http://localhost:1313/list">Lists</a></li>
+							<li><a href="http://localhost:1313/partial">Partials</a></li>
+							<li><a href="http://localhost:1313/single">Singles</a></li>
+							<li><a href="http://localhost:1313/static">Static</a></li>
+							<li><a href="http://localhost:1313/syntax">Syntax</a></li>
 						</ul>
 					</li>
-					<li><a href="http://blank.mdhender.com/best">Best Practices</a>
-					<li><a href="http://blank.mdhender.com/misc">Miscellaneous</a>
-					<li><a href="http://blank.mdhender.com/privacy">Privacy</a></li>
-					<li><a href="http://blank.mdhender.com/about">About</a></li>
+					<li><a href="http://localhost:1313/best">Best Practices</a>
+					<li><a href="http://localhost:1313/misc">Miscellaneous</a>
+					<li><a href="http://localhost:1313/privacy">Privacy</a></li>
+					<li><a href="http://localhost:1313/about">About</a></li>
 				</ul>
 			</nav>
 		</div>
@@ -149,5 +149,8 @@ Proin vitae porttitor massa.</p>
 	</div>
 </div>
 
-</body>
+<script>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
 </html>

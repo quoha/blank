@@ -3,7 +3,7 @@
   <channel>
       <title>Tincidunt on blank </title>
       <generator uri="https://hugo.spf13.com">Hugo</generator>
-    <link>http://blank.mdhender.com/tags/tincidunt/index.xml/</link>
+    <link>http://localhost:1313/tags/tincidunt/index.xml/</link>
     <language>en-us</language>
     <author>Michael D Henderson</author>
     
@@ -11,10 +11,10 @@
     
     <item>
       <title>Imperdiet Maximus Ligula</title>
-      <link>http://blank.mdhender.com/post/imperdiet-maximus-ligula/</link>
+      <link>http://localhost:1313/post/imperdiet-maximus-ligula/</link>
       <pubDate>Thu, 04 Dec 2014 21:42:24 CST</pubDate>
       <author>Michael D Henderson</author>
-      <guid>http://blank.mdhender.com/post/imperdiet-maximus-ligula/</guid>
+      <guid>http://localhost:1313/post/imperdiet-maximus-ligula/</guid>
       <description>
 
 &lt;p&gt;Aliquam feugiat aliquam dignissim. Sed sit amet mi semper, convallis
